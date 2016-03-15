@@ -106,14 +106,14 @@
     <Compile Include="Infrastructure\UnitOfWork.cs" />
     <Compile Include="Infrastructure\UserStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\GroupRepository.cs" />
+    <Compile Include="Repository\TeamRepository.cs" />
     <Compile Include="Repository\InviteRepository.cs" />
     <Compile Include="Repository\NinjaUserRepository.cs" />
     <Compile Include="Repository\OrderRepository.cs" />
     <Compile Include="Repository\ParticipationRepository.cs" />
     <Compile Include="Repository\RestaurantRepository.cs" />
     <Compile Include="Repository\RestaurantLocationRepository.cs" />
-    <Compile Include="Repository\RestaurantOrderRepository.cs" />
+    <Compile Include="Repository\RestaurantOptionRepository.cs" />
     <Compile Include="Repository\RoleRepository.cs" />
     <Compile Include="Repository\UserRoleRepository.cs" />
   </ItemGroup>

@@ -12,18 +12,18 @@ namespace FoodNinja.Data.Infrastructure
 {
     public class AuthorizationRepository
     {
-        private readonly IUserStore<NinjaUser> _userStore;
+        private readonly IUserStore<NinjaUser, int> _userStore;
         private readonly IDatabaseFactory _databaseFactory;
-        private readonly UserManager<NinjaUser> _userManager;
+        private readonly UserManager<NinjaUser, int> _userManager;
 
         private NinjaDataContext db;
         protected NinjaDataContext Db => db ?? (db = _databaseFactory.GetDataContext());
 
-        public AuthorizationRepository(IDatabaseFactory databaseFactory, IUserStore<NinjaUser> userStore)
+        public AuthorizationRepository(IDatabaseFactory databaseFactory, IUserStore<NinjaUser, int> userStore)
         {
             _userStore = userStore;
             _databaseFactory = databaseFactory;
-            _userManager = new UserManager<NinjaUser>(userStore);
+            _userManager = new UserManager<NinjaUser, int>(userStore);
         }
 
         public async Task<IdentityResult> RegisterUser(RegistrationModel model)

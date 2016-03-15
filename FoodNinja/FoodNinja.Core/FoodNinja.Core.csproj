@@ -122,6 +122,7 @@
     <Compile Include="Model\RestaurantModel.cs" />
     <Compile Include="Model\RestaurantOptionModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IAuthorizationRepository.cs" />
     <Compile Include="Repository\ITeamRepository.cs" />
     <Compile Include="Repository\IInviteRepository.cs" />
     <Compile Include="Repository\INinjaUserRepository.cs" />

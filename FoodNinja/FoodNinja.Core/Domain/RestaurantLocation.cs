@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodNinja.Core.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,6 +8,24 @@ namespace FoodNinja.Core.Domain
 {
     public class RestaurantLocation
     {
+        public RestaurantLocation()
+        {
+
+        }
+
+        public RestaurantLocation(RestaurantLocationModel restaurantLocation) : this()
+        {
+            Update(restaurantLocation);
+            CreatedDate = DateTime.Now;
+            Address1 = restaurantLocation.Address1;
+            Address2 = restaurantLocation.Address2;
+            Address3 = restaurantLocation.Address3;
+            City = restaurantLocation.City;
+            State = restaurantLocation.State;
+            PostCode = restaurantLocation.PostCode;
+            Telephone = restaurantLocation.Telephone;
+        }
+
         public int RestaurantLocationId { get; set; }
         public int RestaurantId { get; set; }
         public DateTime CreatedDate { get; set; }
@@ -21,5 +40,11 @@ namespace FoodNinja.Core.Domain
         public virtual Restaurant Restaurant { get; set; }
 
         public virtual ICollection<RestaurantOption> RestaurantOptions { get; set; }
+
+        public void Update(RestaurantLocationModel restaurantLocation)
+        {
+
+        }
+
     }
 }

@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace FoodNinja.Data.Repository
 {
-    public class RestaurantOrderRepository : Repository<RestaurantOption>, IRestaurantOptionRepository
+    public class RestaurantOptionRepository : Repository<RestaurantOption>, IRestaurantOptionRepository
     {
-        public RestaurantOrderRepository(IDatabaseFactory databaseFactory) : base(databaseFactory)
+        public RestaurantOptionRepository(IDatabaseFactory databaseFactory) : base(databaseFactory)
         {
 
         }
