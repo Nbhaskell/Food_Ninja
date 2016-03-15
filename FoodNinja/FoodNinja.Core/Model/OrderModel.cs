@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace FoodNinja.Core.Domain
+namespace FoodNinja.Core.Model
 {
-    public class Order
+    public class OrderModel
     {
         public int OrderId { get; set; }
         public int TeamId { get; set; }
         public int NinjaUserId { get; set; }
+        public int RestaurantOptionId { get; set; }
         public string OrderName { get; set; }
         public DateTime CreatedDate { get; set; }
 
-        public virtual Team Team { get; set; }
+        public TeamModel Group { get; set; }
 
-        public virtual ICollection<Participation> Participations { get; set; }
-        public virtual ICollection<RestaurantOption> RestaurantOptions { get; set; }
+        public IEnumerable<ParticipationModel> Participations { get; set; }
+        public IEnumerable<RestaurantOptionModel> RestaurantOrders { get; set; }
     }
 }

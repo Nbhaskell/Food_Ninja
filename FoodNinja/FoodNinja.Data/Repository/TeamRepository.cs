@@ -9,7 +9,7 @@ using System.Web;
 
 namespace FoodNinja.Data.Repository
 {
-    public class GroupRepository : Repository<Group>, IGroupRepository
+    public class GroupRepository : Repository<Group>, ITeamRepository
     {
         public GroupRepository(IDatabaseFactory databaseFactory) : base(databaseFactory)
         {

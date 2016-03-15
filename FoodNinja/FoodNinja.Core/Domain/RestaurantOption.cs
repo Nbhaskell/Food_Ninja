@@ -5,13 +5,14 @@ using System.Web;
 
 namespace FoodNinja.Core.Domain
 {
-    public class RestaurantOrder
+    public class RestaurantOption
     {
-        public string RestaurantOrderId { get; set; } 
-        public string OrderId { get; set; }
-        public int CreatedDate { get; set; }
+        public int OrderId { get; set; }
+        public int RestaurantLocationId { get; set; }
+        public DateTime CreatedDate { get; set; }
         
         public virtual Order Order { get; set; }
         public virtual RestaurantLocation RestaurantLocation { get; set; }
+        public virtual ICollection<Participation> Participations { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using FoodNinja.Core.Domain;
 using FoodNinja.Core.Infrastructure;
-using FoodNinja.Core.Models;
+using FoodNinja.Core.Model;
 using System.Threading.Tasks;
 using System;
 using System.Collections.Generic;
@@ -33,7 +33,7 @@ namespace FoodNinja.Data.Infrastructure
             var ninjaUser = new NinjaUser
             {
                 UserName = model.EmailAddress,
-                Email = model.EmailAddress,
+                EmailAddress = model.EmailAddress,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 PasswordHash = model.PasswordHash,

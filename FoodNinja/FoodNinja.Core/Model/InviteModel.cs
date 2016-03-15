@@ -5,11 +5,10 @@ using System.Web;
 
 namespace FoodNinja.Core.Model
 {
-    public class InvitesModel
+    public class InviteModel
     {
-        public string InviteId { get; set; }
-        public string GroupId { get; set; }
+        public int InviteId { get; set; }
+        public int TeamId { get; set; }
         public string Token { get; set; }
-
     }
 }

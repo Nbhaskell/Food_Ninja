@@ -5,10 +5,11 @@ using System.Web;
 
 namespace FoodNinja.Core.Model
 {
-    public class NinjaUsersModel
+    public class NinjaUserModel
     {
-        public string NinjaUserId { get; set; }
-        public string GroupId { get; set; }
+        public int NinjaUserId { get; set; }
+        public int TeamId { get; set; }
+        public string UserName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
@@ -16,6 +17,6 @@ namespace FoodNinja.Core.Model
         public string SecurityStamp { get; set; }
         public DateTime CreatedDate { get; set; }
 
-        public IEnumerable<ParticipationsModel> Participation { get; set; }
+        public IEnumerable<ParticipationModel> Participation { get; set; }
     }
 }

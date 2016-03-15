@@ -8,26 +8,28 @@ namespace FoodNinja.Core.Model
 {
     public class RegistrationModel
     {
-            [Required]
-            public string FirstName { get; set; }
+        [Required]
+        public string FirstName { get; set; }
 
-            [Required]
-            public string LastName { get; set; }
+        [Required]
+        public string LastName { get; set; }
 
-            [Required]
-            public string EmailAddress { get; set; }
+        [Required]
+        public string EmailAddress { get; set; }
 
-            [Required]
-            [StringLength(64, ErrorMessage = "The {0} must be at least {2} characters long", MinimumLength = 8)]
-            [DataType(DataType.Password)]
-            [Display(Name = "Password")]
-            public string Password { get; set; }
+        [Required]
+        [StringLength(64, ErrorMessage = "The {0} must be at least {2} characters long", MinimumLength = 8)]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password")]
+        public string Password { get; set; }
 
-            [Required]
-            [Display(Name = "Confirm Password")]
-            [Compare("Password", ErrorMessage = "The password and confirm passwords do not match.")]
-            public string ConfirmPassword { get; set; }
-        }
+        [Required]
+        [Display(Name = "Confirm Password")]
+        [Compare("Password", ErrorMessage = "The password and confirm passwords do not match.")]
+        public string ConfirmPassword { get; set; }
+
+        public string PasswordHash { get; set; }
+        public string SecurityStamp { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
-}
 }

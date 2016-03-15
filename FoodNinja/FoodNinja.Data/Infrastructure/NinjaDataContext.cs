@@ -1,9 +1,9 @@
-﻿using System.FoodNinja.Core.Domain;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using FoodNinja.Core.Domain;
 
 namespace FoodNinja.Data.Infrastructure
 {
@@ -14,33 +14,33 @@ namespace FoodNinja.Data.Infrastructure
             var ensureDLLIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         }
 
-        public IDbSet<Group> Groups { get; set; }
+        public IDbSet<Team> Teams { get; set; }
         public IDbSet<Invite> Invites { get; set; }
         public IDbSet<NinjaUser> NinjaUsers { get; set; }
         public IDbSet<Order> Orders { get; set; }
         public IDbSet<Participation> Participations { get; set; }
         public IDbSet<Restaurant> Restaurants { get; set; }
         public IDbSet<RestaurantLocation> RestaurantLocations { get; set; }
-        public IDbSet<RestaurantOrder> RestaurantOrders { get; set; }
+        public IDbSet<RestaurantOption> RestaurantOptions { get; set; }
         public IDbSet<Role> Roles { get; set; }
         public IDbSet<UserRole> UserRoles { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Group>()
+            modelBuilder.Entity<Team>()
                 .HasMany(g => g.Invites)
-                .WithRequired(i => i.Group)
-                .HasForeignKey(i => i.GroupId);
+                .WithRequired(i => i.Team)
+                .HasForeignKey(i => i.TeamId);
 
-            modelBuilder.Entity<Group>()
+            modelBuilder.Entity<Team>()
                 .HasMany(g => g.NinjaUsers)
-                .WithRequired(nu => nu.Group)
-                .HasForeignKey(nu => nu.GroupId);
+                .WithRequired(nu => nu.Team)
+                .HasForeignKey(nu => nu.TeamId);
 
-            modelBuilder.Entity<Group>()
+            modelBuilder.Entity<Team>()
                 .HasMany(g => g.Orders)
-                .WithRequired(o => o.Group)
-                .HasForeignKey(o => o.GroupId); 
+                .WithRequired(o => o.Team)
+                .HasForeignKey(o => o.TeamId); 
 
             modelBuilder.Entity<NinjaUser>()
                 .HasMany(n => n.Participations)
@@ -54,17 +54,17 @@ namespace FoodNinja.Data.Infrastructure
                 .HasForeignKey(p => p.OrderId);
 
             modelBuilder.Entity<Order>()
-                .HasMany(o => o.RestaurantOrder)
+                .HasMany(o => o.RestaurantOptions)
                 .WithRequired(ro => ro.Order)
                 .HasForeignKey(ro => ro.OrderId);
 
             modelBuilder.Entity<Restaurant>()
-                .HasMany(r => r.RestaurantLocation)
+                .HasMany(r => r.RestaurantLocations)
                 .WithRequired(rl => rl.Restaurant)
                 .HasForeignKey(rl => rl.RestaurantId);
 
             modelBuilder.Entity<RestaurantLocation>()
-                .HasMany(rl => rl.RestaurantOrder)
+                .HasMany(rl => rl.RestaurantOptions)
                 .WithRequired(ro => ro.RestaurantLocation)
                 .HasForeignKey(ro => ro.RestaurantLocationId);            
 
@@ -74,7 +74,7 @@ namespace FoodNinja.Data.Infrastructure
             modelBuilder.Entity<NinjaUser>()
                 .HasMany(u => u.UserRoles)
                 .WithRequired(ur => ur.NinjaUser)
-                .HasForeignKey(ur => ur.NinjaUserId);
+                .HasForeignKey(ur => ur.UserId);
 
             modelBuilder.Entity<Role>()
                 .HasMany(r => r.UserRoles)

@@ -7,8 +7,11 @@ namespace FoodNinja.Core.Domain
 {
     public class Restaurant
     {
-        public string RestaurantId { get; set; }
-        public int CreatedDate { get; set; }
+        public int RestaurantId { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string URL { get; set; }
 
         public virtual ICollection<RestaurantLocation> RestaurantLocations { get; set; }
     }

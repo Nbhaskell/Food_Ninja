@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using FoodNinja.Core.Domain;
+using FoodNinja.Core.Infrastructure;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;

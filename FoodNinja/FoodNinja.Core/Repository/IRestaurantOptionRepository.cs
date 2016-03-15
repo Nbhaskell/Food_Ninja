@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FoodNinja.Core.Repository
 {
-    public interface IGroupRepository : IRepository<Group>
+    public interface IRestaurantOptionRepository : IRepository<RestaurantOption>
     {
     }
 }

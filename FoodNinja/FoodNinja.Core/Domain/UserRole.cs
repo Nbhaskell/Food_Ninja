@@ -7,8 +7,8 @@ namespace FoodNinja.Core.Domain
 {
     public class UserRole
     {
-        public string UserId { get; set; }
-        public string RoleId { get; set; }
+        public int UserId { get; set; }
+        public int RoleId { get; set; }
 
         public virtual NinjaUser NinjaUser { get; set; }
         public virtual Role Role { get; set; }
