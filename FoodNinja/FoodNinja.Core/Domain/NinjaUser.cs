@@ -40,6 +40,8 @@ namespace FoodNinja.Core.Domain
         public string SecurityStamp { get; set; }
         public DateTime CreatedDate { get; set; }
 
+        public string FullName => "{0} {1}".With(FirstName, LastName);
+
         public virtual ICollection<UserRole> UserRoles { get; set; }
         public virtual ICollection<Participation> Participations { get; set; }
         public virtual Team Team { get; set; }

@@ -26,6 +26,7 @@ namespace FoodNinja.Data.Infrastructure
             _userManager = new UserManager<NinjaUser, int>(userStore);
         }
 
+        //Assign User's Their Role Here
         public async Task<IdentityResult> RegisterUser(RegistrationModel model)
         {
             //create a user
@@ -45,7 +46,7 @@ namespace FoodNinja.Data.Infrastructure
 
             var result = await _userManager.CreateAsync(ninjaUser, model.Password);
 
-            await _userManager.AddToRoleAsync(ninjaUser.Id, "User");
+            await _userManager.AddToRoleAsync(ninjaUser.NinjaUserId, "User");
 
             return result;
         }
