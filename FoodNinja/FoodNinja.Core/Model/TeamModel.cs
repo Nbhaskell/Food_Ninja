@@ -15,7 +15,7 @@ namespace FoodNinja.Core.Model
         public string City { get; set; }
         public string State { get; set; }
         public string PostCode { get; set; }
-        public int Telephone { get; set; }
+        public string Telephone { get; set; }
         public DateTime CreatedDate { get; set; }
 
         public IEnumerable<NinjaUserModel> NinjaUsers { get; set; }

@@ -84,14 +84,48 @@ namespace FoodNinja.API.Controllers
                     throw;
                 }
             }
-
+            return StatusCode(HttpStatusCode.NoContent);
         }
 
         //POST: api/Teams/5
+        [ResponseType(typeof(TeamModel))]
+        public IHttpActionResult PostTeam(TeamModel team)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
+            var dbTeam = new Core.Domain.Team(team);
+
+            _teamRepository.Add(dbTeam);
+            _unitOfWork.Commit();
+
+            return CreatedAtRoute("DefaultApi", new { id = team.TeamId }, team);
+        }
 
 
         //DELETE: api/Teams/5
+        [ResponseType(typeof(TeamModel))]
+        public IHttpActionResult DeleteTeam(int id)
+        {
+            Core.Domain.Team team = _teamRepository.GetById(id);
 
+            if (team == null)
+            {
+                return NotFound();
+            }
+
+            _teamRepository.Delete(team);
+
+            _unitOfWork.Commit();
+
+            return Ok(Mapper.Map<TeamModel>(team));
+        }
+
+        private bool TeamExists(int id)
+        {
+            return _teamRepository.Any(t => t.TeamId == id);
+        }
     }
 }

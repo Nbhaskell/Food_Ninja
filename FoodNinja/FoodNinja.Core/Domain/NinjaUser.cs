@@ -30,7 +30,7 @@ namespace FoodNinja.Core.Domain
             SecurityStamp = ninjaUser.SecurityStamp;
             CreatedDate = ninjaUser.CreatedDate;
         }
-        public int Id { get; set; }
+        public int NinjaUserId { get; set; }
         public int TeamId { get; set; }
         public string UserName { get; set; }
         public string FirstName { get; set; }

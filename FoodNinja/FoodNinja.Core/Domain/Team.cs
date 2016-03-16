@@ -24,7 +24,7 @@ namespace FoodNinja.Core.Domain
         public void Update(TeamModel team)
         {
             TeamId = team.TeamId;
-            Name = team.Name;
+            TeamName = team.TeamName;
             Address1 = team.Address1;
             Address2 = team.Address2;
             Address3 = team.Address3;
@@ -36,7 +36,7 @@ namespace FoodNinja.Core.Domain
         }
 
         public int TeamId { get; set; }
-        public string Name { get; set; }
+        public string TeamName { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }
         public string Address3 { get; set; }
