@@ -13,7 +13,7 @@ using System.Web.Http.Description;
 
 namespace FoodNinja.API.Controllers
 {
-    [Authorize]
+    
     public class RestaurantLocationsController : ApiController
     {
         private readonly IRestaurantLocationRepository _restaurantLocationRepository;

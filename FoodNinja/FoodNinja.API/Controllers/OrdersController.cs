@@ -13,6 +13,7 @@ using System.Web.Http.Description;
 
 namespace FoodNinja.API.Controllers
 {
+    [Authorize]
     public class OrdersController : ApiController
     {
         private readonly IUnitOfWork _unitOfWork;

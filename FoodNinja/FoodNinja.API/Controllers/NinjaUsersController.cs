@@ -7,7 +7,11 @@ using System.Web.Http;
 
 namespace FoodNinja.API.Controllers
 {
+    [Authorize]
     public class NinjaUsersController : ApiController
     {
+
+
+
     }
 }

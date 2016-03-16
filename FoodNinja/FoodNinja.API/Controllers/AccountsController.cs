@@ -11,13 +11,14 @@ using System.Web.Http;
 
 namespace FoodNinja.API.Controllers
 {
+
     public class AccountsController : ApiController
     {
-        private IAuthorizationRepository _repo;
+        private readonly IAuthorizationRepository _authorizationRepository;
 
-        public AccountsController(IAuthorizationRepository repo)
+        public AccountsController(IAuthorizationRepository authorizationRepository)
         {
-            _repo = repo;
+            _authorizationRepository = authorizationRepository;
         }
 
         // POST API/Account/Register
@@ -31,7 +32,7 @@ namespace FoodNinja.API.Controllers
                 return BadRequest(ModelState);
             }
 
-            var result = await _repo.RegisterUser(registration);
+            var result = await _authorizationRepository.RegisterUser(registration);
 
             if(result.Succeeded)
             {
@@ -52,7 +53,7 @@ namespace FoodNinja.API.Controllers
                 return BadRequest(ModelState);
             }
 
-            var result = await _repo.RegisterAdmin(registration);
+            var result = await _authorizationRepository.RegisterAdmin(registration);
 
             if (result.Succeeded)
             {
