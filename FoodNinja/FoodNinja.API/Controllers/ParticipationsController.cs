@@ -27,9 +27,9 @@ namespace FoodNinja.API.Controllers
         }
 
         //GET: api/Participations
-        public IQueryable<ParticipationModel> GetParticipations()
+        public IEnumerable<ParticipationModel> GetParticipations()
         {
-            return _participationRepository.GetAll().ProjectTo<ParticipationModel>();
+            return Mapper.Map<IEnumerable<ParticipationModel>>(_participationRepository.GetWhere(p => p.NinjaUser.TeamId == CurrentUser.TeamId));
         }
 
         //GET: api/Participations/5
