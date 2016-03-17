@@ -37,6 +37,7 @@ namespace FoodNinja.API.Controllers
             return Mapper.Map<IEnumerable<RestaurantOptionModel>>(_restaurantOptionRepository.GetAll());
         }
 
+
         //GET: api/RestaurantOptions/5
         [ResponseType(typeof(RestaurantOptionModel))]
         public IHttpActionResult GetRestaurantOption(int id)
