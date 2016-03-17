@@ -121,6 +121,7 @@ namespace FoodNinja.API.Controllers
 
             return Ok(Mapper.Map<ParticipationModel>(participation));
         }
+
         private bool ParticipationExists(int id)
         {
             return _participationRepository.Any(p => p.ParticipationId == id);

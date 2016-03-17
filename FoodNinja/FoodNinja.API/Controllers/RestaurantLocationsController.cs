@@ -86,10 +86,7 @@ namespace FoodNinja.API.Controllers
 
             return StatusCode(HttpStatusCode.NoContent);
         }
-
-
-
-
+        
         //POST: api/RestaurantLocations
         [ResponseType(typeof(RestaurantLocationModel))]
         public IHttpActionResult PostRestaurantLocation(RestaurantLocationModel restaurantLocation)
