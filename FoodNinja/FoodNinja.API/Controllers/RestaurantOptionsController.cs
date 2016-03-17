@@ -27,9 +27,14 @@ namespace FoodNinja.API.Controllers
         }
 
         //GET: api/RestaurantOptions
-        public IQueryable<RestaurantOptionModel> GetRestaurantOptions()
+        //public IQueryable<RestaurantOptionModel> GetRestaurantOptions()
+        //{
+        //    return _restaurantOptionRepository.GetAll().ProjectTo<RestaurantOptionModel>();
+        //}
+        [ResponseType(typeof(RestaurantOptionModel))]
+        public IEnumerable<RestaurantOptionModel> GetRestaurants()
         {
-            return _restaurantOptionRepository.GetAll().ProjectTo<RestaurantOptionModel>();
+            return Mapper.Map<IEnumerable<RestaurantOptionModel>>(_restaurantOptionRepository.GetAll());
         }
 
         //GET: api/RestaurantOptions/5

@@ -27,11 +27,17 @@ namespace FoodNinja.API.Controllers
         }
 
         //GET: api/RestaurantLocations
+        //public IEnumerable<RestaurantLocationModel> GetRestaurantLocations()
+        //{
+        //    return _restaurantLocationRepository.GetAll();
+        //}
+
+        [ResponseType(typeof(RestaurantLocationModel))]
         public IEnumerable<RestaurantLocationModel> GetRestaurantLocations()
         {
-            return _restaurantLocationRepository.GetAll();
+            return Mapper.Map<IEnumerable<RestaurantLocationModel>>(_restaurantLocationRepository.GetAll());
         }
-        
+
         //GET: api/RestaurantLocations/5
         [ResponseType(typeof(RestaurantLocationModel))]
         public IHttpActionResult GetRestaurantLocation(int id)

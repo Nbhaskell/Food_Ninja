@@ -30,3 +30,4 @@ C:\Dev\Origin\Food_Ninja\FoodNinja\FoodNinja.Data\bin\Microsoft.CodeDom.Provider
 C:\Dev\Origin\Food_Ninja\FoodNinja\FoodNinja.Data\bin\Newtonsoft.Json.xml
 C:\Dev\Origin\Food_Ninja\FoodNinja\FoodNinja.Data\obj\Debug\FoodNinja.Data.dll
 C:\Dev\Origin\Food_Ninja\FoodNinja\FoodNinja.Data\obj\Debug\FoodNinja.Data.pdb
+C:\dev\Origin\Food_Ninja\FoodNinja\FoodNinja.Data\bin\VisualStudioGitIgnore.dll

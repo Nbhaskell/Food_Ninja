@@ -13,6 +13,6 @@ namespace FoodNinja.Core.Model
         public string Description { get; set; }
         public string URL { get; set; }
 
-        public IEnumerable<RestaurantLocationModel> RestaurantLocations { get; set; }
+        public IQueryable<RestaurantLocationModel> RestaurantLocations { get; set; }
     }
 }

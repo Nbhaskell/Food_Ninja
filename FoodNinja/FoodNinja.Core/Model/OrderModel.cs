@@ -16,7 +16,7 @@ namespace FoodNinja.Core.Model
 
         public TeamModel Group { get; set; }
 
-        public IEnumerable<ParticipationModel> Participations { get; set; }
+     //   public IEnumerable<ParticipationModel> Participations { get; set; }
         public IEnumerable<RestaurantOptionModel> RestaurantOrders { get; set; }
     }
 }

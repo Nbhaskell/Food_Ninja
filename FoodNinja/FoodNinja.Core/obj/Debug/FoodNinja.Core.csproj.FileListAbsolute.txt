@@ -28,3 +28,4 @@ C:\Dev\Origin\Food_Ninja\FoodNinja\FoodNinja.Core\bin\Newtonsoft.Json.xml
 C:\Dev\Origin\Food_Ninja\FoodNinja\FoodNinja.Core\obj\Debug\FoodNinja.Core.csprojResolveAssemblyReference.cache
 C:\Dev\Origin\Food_Ninja\FoodNinja\FoodNinja.Core\obj\Debug\FoodNinja.Core.dll
 C:\Dev\Origin\Food_Ninja\FoodNinja\FoodNinja.Core\obj\Debug\FoodNinja.Core.pdb
+C:\dev\Origin\Food_Ninja\FoodNinja\FoodNinja.Core\bin\VisualStudioGitIgnore.dll

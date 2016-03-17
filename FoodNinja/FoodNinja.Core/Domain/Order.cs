@@ -10,7 +10,7 @@ namespace FoodNinja.Core.Domain
     {
         public Order()
         {
-            Participations = new HashSet<Participation>();
+         //   Participations = new HashSet<Participation>();
         }
 
         public Order(OrderModel order) : this()
@@ -29,7 +29,7 @@ namespace FoodNinja.Core.Domain
 
         public virtual Team Team { get; set; }
 
-        public virtual ICollection<Participation> Participations { get; set; }
+     //   public virtual ICollection<Participation> Participations { get; set; }
         public virtual ICollection<RestaurantOption> RestaurantOptions { get; set; }
 
         public void Update(OrderModel order)

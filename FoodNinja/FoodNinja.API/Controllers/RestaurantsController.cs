@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using FoodNinja.API.Infrastructure;
 using FoodNinja.Core.Infrastructure;
 using FoodNinja.Core.Model;
 using FoodNinja.Core.Repository;
@@ -13,21 +14,26 @@ using System.Web.Http.Description;
 
 namespace FoodNinja.API.Controllers
 {
-    public class RestaurantsController : ApiController
+    public class RestaurantsController : BaseApiController
     {
         private readonly IRestaurantRepository _restaurantRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public RestaurantsController(IRestaurantRepository restaurantRepository, IUnitOfWork unitOfWork)
+        public RestaurantsController(IRestaurantRepository restaurantRepository, IUnitOfWork unitOfWork, INinjaUserRepository ninjaUserRepository) : base(ninjaUserRepository)
         {
             _restaurantRepository = restaurantRepository;
             _unitOfWork = unitOfWork;
         }
 
         //GET: api/Restaurants
-        public IQueryable<RestaurantModel> GetRestaurants()
+        //public IQueryable<RestaurantModel> GetRestaurants()
+        //{
+        //    return _restaurantRepository.GetAll().ProjectTo<RestaurantModel>();
+        //}
+        [ResponseType(typeof(RestaurantModel))]
+        public IEnumerable<RestaurantModel> GetRestaurants()
         {
-            return _restaurantRepository.GetAll().ProjectTo<RestaurantModel>();
+            return Mapper.Map<IEnumerable<RestaurantModel>>(_restaurantRepository.GetAll());
         }
 
         //GET: api/Restaurants/5
