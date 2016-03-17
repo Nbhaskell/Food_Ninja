@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using FoodNinja.API.Infrastructure;
 using FoodNinja.Core.Infrastructure;
 using FoodNinja.Core.Model;
 using FoodNinja.Core.Repository;
@@ -14,12 +15,12 @@ using System.Web.Http.Description;
 namespace FoodNinja.API.Controllers
 {
     [Authorize]
-    public class ParticipationsController : ApiController
+    public class ParticipationsController : BaseApiController
     {
         private readonly IParticipationRepository _participationRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public ParticipationsController(IParticipationRepository participationRepository, IUnitOfWork unitOfWork)
+        public ParticipationsController(IParticipationRepository participationRepository, IUnitOfWork unitOfWork, INinjaUserRepository ninjaUserRepository) : base(ninjaUserRepository)
         {
             _participationRepository = participationRepository;
             _unitOfWork = unitOfWork;
@@ -37,7 +38,7 @@ namespace FoodNinja.API.Controllers
         {
             Core.Domain.Participation participation = _participationRepository.GetById(id);
 
-            if (participation == null)
+            if (participation == null || participation.NinjaUser.TeamId != CurrentUser.TeamId)
             {
                 return NotFound();
             }

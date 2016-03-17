@@ -14,7 +14,7 @@ namespace FoodNinja.Core.Infrastructure
         // Read
        
         TEntity GetById(object id);
-        IQueryable<TEntity> GetAll();
+        IEnumerable<TEntity> GetAll();
         IEnumerable<TEntity> GetWhere(Expression<Func<TEntity, bool>> where);
         TEntity GetFirstOrDefault(Expression<Func<TEntity, bool>> where);
         int Count();

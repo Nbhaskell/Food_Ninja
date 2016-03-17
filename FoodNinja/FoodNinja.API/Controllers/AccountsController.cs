@@ -1,4 +1,5 @@
-﻿using FoodNinja.Core.Model;
+﻿using FoodNinja.API.Infrastructure;
+using FoodNinja.Core.Model;
 using FoodNinja.Core.Repository;
 using Microsoft.AspNet.Identity;
 using System;
@@ -12,11 +13,11 @@ using System.Web.Http;
 namespace FoodNinja.API.Controllers
 {
 
-    public class AccountsController : ApiController
+    public class AccountsController : BaseApiController
     {
         private readonly IAuthorizationRepository _authorizationRepository;
 
-        public AccountsController(IAuthorizationRepository authorizationRepository)
+        public AccountsController(IAuthorizationRepository authorizationRepository, INinjaUserRepository ninjaUserRepository) : base(ninjaUserRepository)
         {
             _authorizationRepository = authorizationRepository;
         }

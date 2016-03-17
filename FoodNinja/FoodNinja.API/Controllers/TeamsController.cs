@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using FoodNinja.API.Infrastructure;
 using FoodNinja.Core.Infrastructure;
 using FoodNinja.Core.Model;
 using FoodNinja.Core.Repository;
@@ -14,36 +15,29 @@ using System.Web.Http.Description;
 namespace FoodNinja.API.Controllers
 {
     [Authorize]
-    public class TeamsController : ApiController
+    public class TeamsController : BaseApiController
     {
         private ITeamRepository _teamRepository;
         private IUnitOfWork _unitOfWork;
 
-        public TeamsController(ITeamRepository teamRepository, IUnitOfWork unitOfWork)
+        public TeamsController(ITeamRepository teamRepository, IUnitOfWork unitOfWork, INinjaUserRepository ninjaUserRepository) : base(ninjaUserRepository)
         {
             _teamRepository = teamRepository;
             _unitOfWork = unitOfWork;
         }
 
         //GET: api/Teams
-        public IQueryable<TeamModel> GetTeams()
-        {
-            return _teamRepository.GetAll().ProjectTo<TeamModel>();
-        }
+        //public IQueryable<TeamModel> GetTeams()
+        //{
+        //    return _teamRepository.GetAll().ProjectTo<TeamModel>();
+        //}
 
 
         //GET: api/Teams/5
         [ResponseType(typeof(TeamModel))]
         public IHttpActionResult GetTeam(int id)
         {
-            Core.Domain.Team team = _teamRepository.GetById(id);
-
-            if (team == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(Mapper.Map<TeamModel>(team));
+            return Ok(Mapper.Map<TeamModel>(CurrentUser.Team));
         }
 
 

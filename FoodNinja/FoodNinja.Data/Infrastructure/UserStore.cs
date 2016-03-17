@@ -11,10 +11,10 @@ using System.Web;
 namespace FoodNinja.Data.Infrastructure
 {
     public class UserStore : Disposable,
-                             IUserStore<NinjaUser>,
-                             IUserPasswordStore<NinjaUser>,
-                             IUserSecurityStampStore<NinjaUser>,
-                             IUserRoleStore<NinjaUser>
+                             IUserStore<NinjaUser, int>,
+                             IUserPasswordStore<NinjaUser, int>,
+                             IUserSecurityStampStore<NinjaUser, int>,
+                             IUserRoleStore<NinjaUser, int>
     {
         private readonly IDatabaseFactory _databaseFactory;
 
@@ -39,15 +39,15 @@ namespace FoodNinja.Data.Infrastructure
                 throw new ArgumentNullException(nameof(user));
 
             return Task.Factory.StartNew(() => {
-                user.Id = Guid.NewGuid().ToString();
+                //user.NinjaUserId = Guid.NewGuid().ToString();
                 Db.NinjaUsers.Add(user);
                 Db.SaveChanges();
             });
         }
 
-        public Task UpdateAsync(NinjaUser uer)
+        public Task UpdateAsync(NinjaUser user)
         {
-            if (User == null)
+            if (user == null)
                 throw new ArgumentNullException(nameof(user));
 
             return Task.Factory.StartNew(() =>
@@ -66,18 +66,19 @@ namespace FoodNinja.Data.Infrastructure
 
             return Task.Factory.StartNew(() =>
             {
-                Db.Users.Remove(user);
+                Db.NinjaUsers.Remove(user);
                 Db.SaveChanges();
             });
         }
-        public Task<NinjaUser> FindByIdAsync(string userId)
+
+        public Task<NinjaUser> FindByIdAsync(int userId)
         {
-            return Task.Factory.StartNew(() => Db.Users.Find(userId));
+            return Task.Factory.StartNew(() => Db.NinjaUsers.Find(userId));
         }
 
         public Task<NinjaUser> FindByNameAsync(string userName)
         {
-            return Task.Factory.StartNew(() => Db.Users.FirstOrDefault(u => u.UserName == userName));
+            return Task.Factory.StartNew(() => Db.NinjaUsers.FirstOrDefault(u => u.UserName == userName));
         }
         #endregion
 
@@ -142,11 +143,12 @@ namespace FoodNinja.Data.Infrastructure
 
             return Task.Factory.StartNew(() =>
             {
+                // Check if the role even exists in the database
                 if (!Db.Roles.Any(r => r.Name == roleName))
                 {
+                    // add it to the database
                     Db.Roles.Add(new Role
                     {
-                        Id = Guid.NewGuid().ToString(),
                         Name = roleName
                     });
                     Db.SaveChanges();
@@ -176,7 +178,7 @@ namespace FoodNinja.Data.Infrastructure
 
             return Task.Factory.StartNew(() =>
             {
-                var userRole = user.Roles.FirstOrDefault(r => r.Role.Name == roleName);
+                var userRole = user.UserRoles.FirstOrDefault(r => r.Role.Name == roleName);
 
                 if (userRole == null)
                 {
@@ -201,7 +203,7 @@ namespace FoodNinja.Data.Infrastructure
         {
             return Task.Factory.StartNew(() =>
             {
-                return user.Roles.Any(r => r.Role.Name == roleName);
+                return user.UserRoles.Any(r => r.Role.Name == roleName);
             });
         }
 

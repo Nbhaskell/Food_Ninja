@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using FoodNinja.API.Infrastructure;
 using FoodNinja.Core.Infrastructure;
 using FoodNinja.Core.Model;
 using FoodNinja.Core.Repository;
@@ -14,30 +15,30 @@ using System.Web.Http.Description;
 namespace FoodNinja.API.Controllers
 {
     [Authorize]
-    public class NinjaUsersController : ApiController
+    public class NinjaUsersController : BaseApiController
     {
         private INinjaUserRepository _ninjaUserRepository;
         private IUnitOfWork _unitOfWork;
 
-        public NinjaUsersController(INinjaUserRepository ninjaUserRepository, IUnitOfWork unitOfWork)
+        public NinjaUsersController(INinjaUserRepository ninjaUserRepository, IUnitOfWork unitOfWork) : base(ninjaUserRepository)
         {
             _ninjaUserRepository = ninjaUserRepository;
             _unitOfWork = unitOfWork;
         }
 
         //GET: api/NinjaUsers
-        public IQueryable<NinjaUserModel> GetNinjaUsers()
+        public IEnumerable<NinjaUserModel> GetNinjaUsers()
         {
-            return _ninjaUserRepository.GetAll().ProjectTo<NinjaUserModel>();
+            return Mapper.Map<IEnumerable<NinjaUserModel>>(_ninjaUserRepository.GetWhere(nu => nu.TeamId == CurrentUser.TeamId));
         }
 
         //GET: api/NinjaUsers/5
         [ResponseType(typeof(NinjaUserModel))]
         public IHttpActionResult GetNinjaUser(int id)
         {
-            Core.Domain.NinjaUser ninjaUser = _ninjaUserRepository.GetById(id);
+            Core.Domain.NinjaUser ninjaUser = _ninjaUserRepository.GetById(id);            
 
-            if (ninjaUser == null)
+            if (ninjaUser == null || ninjaUser.TeamId != CurrentUser.TeamId)
             {
                 return NotFound();
             }
@@ -122,7 +123,7 @@ namespace FoodNinja.API.Controllers
 
         private bool TeamExists(int id)
         {
-            return _ninjaUserRepository.Any(nu => nu.NinjaUserId == id);
+            return _ninjaUserRepository.Any(nu => nu.Id == id);
         }
     }
 }

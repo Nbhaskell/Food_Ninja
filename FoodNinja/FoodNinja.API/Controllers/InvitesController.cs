@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FoodNinja.API.Infrastructure;
 using FoodNinja.Core.Domain;
 using FoodNinja.Core.Infrastructure;
 using FoodNinja.Core.Model;
@@ -14,12 +15,18 @@ using System.Web.Http.Description;
 namespace FoodNinja.API.Controllers
 {
     [Authorize]
-    public class InvitesController : ApiController
+    public class InvitesController : BaseApiController
     {
         private IInviteRepository _inviteRepository;
         private IUnitOfWork _unitOfWork;
-        private INinjaUserRepository _ninjaUserRepository;
         private ITeamRepository _teamRepository;
+
+        public InvitesController(IInviteRepository inviteRepository, IUnitOfWork unitOfWork, INinjaUserRepository ninjaUserRepository, ITeamRepository teamRepository) : base(ninjaUserRepository)
+        {
+            _inviteRepository = inviteRepository;
+            _unitOfWork = unitOfWork;
+            _teamRepository = teamRepository;
+        }
 
         // GET api/Invites
         [ResponseType(typeof(InviteModel))]

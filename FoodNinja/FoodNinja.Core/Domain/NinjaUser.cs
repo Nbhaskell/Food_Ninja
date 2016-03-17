@@ -30,7 +30,7 @@ namespace FoodNinja.Core.Domain
             SecurityStamp = ninjaUser.SecurityStamp;
             CreatedDate = ninjaUser.CreatedDate;
         }
-        public int NinjaUserId { get; set; }
+        public int Id { get; set; }
         public int TeamId { get; set; }
         public string UserName { get; set; }
         public string FirstName { get; set; }
@@ -40,7 +40,7 @@ namespace FoodNinja.Core.Domain
         public string SecurityStamp { get; set; }
         public DateTime CreatedDate { get; set; }
 
-        public string FullName => "{0} {1}".With(FirstName, LastName);
+        public string FullName => $"{FirstName} {LastName}";
 
         public virtual ICollection<UserRole> UserRoles { get; set; }
         public virtual ICollection<Participation> Participations { get; set; }

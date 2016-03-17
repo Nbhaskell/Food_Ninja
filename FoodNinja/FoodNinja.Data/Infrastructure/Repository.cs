@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodNinja.Core.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Web;
 
 namespace FoodNinja.Data.Infrastructure
 {
-    public class Repository<TEntity> where TEntity : class
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         protected IDatabaseFactory DatabaseFactory { get; set; }
 

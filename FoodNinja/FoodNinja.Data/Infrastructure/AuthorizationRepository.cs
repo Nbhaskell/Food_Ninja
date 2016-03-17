@@ -46,7 +46,7 @@ namespace FoodNinja.Data.Infrastructure
 
             var result = await _userManager.CreateAsync(ninjaUser, model.Password);
 
-            await _userManager.AddToRoleAsync(ninjaUser.NinjaUserId, "User");
+            await _userManager.AddToRoleAsync(ninjaUser.Id, "User");
 
             return result;
         }
@@ -59,7 +59,7 @@ namespace FoodNinja.Data.Infrastructure
             var ninjaUser = new NinjaUser
             {
                 UserName = model.EmailAddress,
-                EmailTokenProvider = model.EmailAddress
+                EmailAddress = model.EmailAddress
             };
 
             //save the user

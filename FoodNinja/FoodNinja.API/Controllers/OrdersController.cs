@@ -10,24 +10,25 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using FoodNinja.API.Infrastructure;
 
 namespace FoodNinja.API.Controllers
 {
     [Authorize]
-    public class OrdersController : ApiController
+    public class OrdersController : BaseApiController
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IOrderRepository _orderRepository;
 
-        public OrdersController(IUnitOfWork unitOfWork, IOrderRepository orderRepository)
+        public OrdersController(IUnitOfWork unitOfWork, IOrderRepository orderRepository, INinjaUserRepository ninjaUserRepository) : base(ninjaUserRepository)
         {
             _unitOfWork = unitOfWork;
             _orderRepository = orderRepository;
         }
         //GET: api/Orders
-        public IQueryable<OrderModel> GetOrders()
+        public IEnumerable<OrderModel> GetOrders()
         {
-            return _orderRepository.GetAll().ProjectTo<OrderModel>();
+            return Mapper.Map<IEnumerable<OrderModel>>(_orderRepository.GetWhere(o => o.TeamId == CurrentUser.TeamId));
         }
 
         //GET: api/Orders/5

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Threading.Tasks;
+using FoodNinja.Core.Domain;
 
 namespace FoodNinja.Data.Repository
 {
