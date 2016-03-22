@@ -65,6 +65,5 @@ namespace FoodNinja.API.Controllers
                 return BadRequest("Registration form was invalid.");
             }
         }
-
     }
 }

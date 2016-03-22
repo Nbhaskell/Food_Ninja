@@ -26,13 +26,6 @@ namespace FoodNinja.API.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        //GET: api/Teams
-        //public IQueryable<TeamModel> GetTeams()
-        //{
-        //    return _teamRepository.GetAll().ProjectTo<TeamModel>();
-        //}
-
-
         //GET: api/Teams/5
         [ResponseType(typeof(TeamModel))]
         public IHttpActionResult GetTeam(int id)

@@ -26,17 +26,11 @@ namespace FoodNinja.API.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        //GET: api/RestaurantOptions
-        //public IQueryable<RestaurantOptionModel> GetRestaurantOptions()
-        //{
-        //    return _restaurantOptionRepository.GetAll().ProjectTo<RestaurantOptionModel>();
-        //}
         [ResponseType(typeof(RestaurantOptionModel))]
         public IEnumerable<RestaurantOptionModel> GetRestaurants()
         {
             return Mapper.Map<IEnumerable<RestaurantOptionModel>>(_restaurantOptionRepository.GetAll());
         }
-
 
         //GET: api/RestaurantOptions/5
         [ResponseType(typeof(RestaurantOptionModel))]
@@ -51,14 +45,11 @@ namespace FoodNinja.API.Controllers
 
             return Ok(Mapper.Map<RestaurantOptionModel>(restaurantOption));
         }
-        
-
 
         private bool RestaurantOptionExists(int restaurantLocationId, int orderId)
         {
             return _restaurantOptionRepository.Any(ro => ro.RestaurantLocationId == restaurantLocationId && 
                                                          ro.OrderId == orderId);
         }
-
     }
 }

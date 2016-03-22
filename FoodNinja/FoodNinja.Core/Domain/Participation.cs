@@ -21,9 +21,9 @@ namespace FoodNinja.Core.Domain
         }
 
         public int ParticipationId { get; set; }
-    //    public int OrderId { get; set; }
+        public int OrderId { get; set; }
+        public int RestaurantLocationId { get; set; }
         public int NinjaUserId { get; set; }
-        public int RestaurantOptionId { get; set; }
         public bool FavoriteChoice { get; set; }
         public string Selection { get; set; }
         public DateTime CreatedDate { get; set; }
