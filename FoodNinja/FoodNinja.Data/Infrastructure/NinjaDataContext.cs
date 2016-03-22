@@ -48,10 +48,10 @@ namespace FoodNinja.Data.Infrastructure
                 .HasForeignKey(p => p.NinjaUserId);
             // .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Order>()
-                .HasMany(o => o.Participations)
-                .WithRequired(p => p.Order)
-                .HasForeignKey(p => p.OrderId);
+            //modelBuilder.Entity<Order>()
+            //    .HasMany(o => o.Participations)
+            //    .WithRequired(p => p.Order)
+            //    .HasForeignKey(p => p.OrderId);
 
             modelBuilder.Entity<Order>()
                 .HasMany(o => o.RestaurantOptions)

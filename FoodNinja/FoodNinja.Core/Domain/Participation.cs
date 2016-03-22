@@ -21,7 +21,7 @@ namespace FoodNinja.Core.Domain
         }
 
         public int ParticipationId { get; set; }
-        public int OrderId { get; set; }
+    //    public int OrderId { get; set; }
         public int NinjaUserId { get; set; }
         public int RestaurantOptionId { get; set; }
         public bool FavoriteChoice { get; set; }
@@ -29,7 +29,7 @@ namespace FoodNinja.Core.Domain
         public DateTime CreatedDate { get; set; }
 
         public virtual NinjaUser NinjaUser { get; set; }
-        public virtual Order Order { get; set; }
+     //   public virtual Order Order { get; set; }
         public virtual RestaurantOption Option { get; set; }
 
         public void Update(ParticipationModel participation)

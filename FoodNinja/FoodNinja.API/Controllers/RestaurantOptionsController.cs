@@ -27,10 +27,16 @@ namespace FoodNinja.API.Controllers
         }
 
         //GET: api/RestaurantOptions
-        public IEnumerable<RestaurantOptionModel> GetRestaurantOptions()
+        //public IQueryable<RestaurantOptionModel> GetRestaurantOptions()
+        //{
+        //    return _restaurantOptionRepository.GetAll().ProjectTo<RestaurantOptionModel>();
+        //}
+        [ResponseType(typeof(RestaurantOptionModel))]
+        public IEnumerable<RestaurantOptionModel> GetRestaurants()
         {
-            return Mapper.Map<IEnumerable<RestaurantOptionModel>>(_restaurantOptionRepository.GetWhere(ro => ro.RestaurantLocationId == CurrentUser.TeamId));
+            return Mapper.Map<IEnumerable<RestaurantOptionModel>>(_restaurantOptionRepository.GetAll());
         }
+
 
         //GET: api/RestaurantOptions/5
         [ResponseType(typeof(RestaurantOptionModel))]
