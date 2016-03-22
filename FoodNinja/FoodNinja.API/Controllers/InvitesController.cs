@@ -29,6 +29,7 @@ namespace FoodNinja.API.Controllers
         }
 
         // GET api/Invites
+        [AllowAnonymous]
         [ResponseType(typeof(InviteModel))]
         public IHttpActionResult GetInvite(string token)
         {     

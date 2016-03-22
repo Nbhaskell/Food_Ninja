@@ -17,12 +17,10 @@ namespace FoodNinja.API.Controllers
     [Authorize]
     public class NinjaUsersController : BaseApiController
     {
-        private INinjaUserRepository _ninjaUserRepository;
         private IUnitOfWork _unitOfWork;
 
         public NinjaUsersController(INinjaUserRepository ninjaUserRepository, IUnitOfWork unitOfWork) : base(ninjaUserRepository)
         {
-            _ninjaUserRepository = ninjaUserRepository;
             _unitOfWork = unitOfWork;
         }
 
@@ -62,7 +60,7 @@ namespace FoodNinja.API.Controllers
 
             var dbNinjaUser = _ninjaUserRepository.GetById(id);
 
-            if (dbNinjaUser == null) return NotFound();
+            if (dbNinjaUser == null || dbNinjaUser.Id != CurrentUser.Id) return NotFound();
 
             dbNinjaUser.Update(ninjaUser);
 
@@ -86,30 +84,17 @@ namespace FoodNinja.API.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        //POST: api/NinjaUsers/5
-        [ResponseType(typeof(NinjaUserModel))]
-        public IHttpActionResult PostNinjaUser(NinjaUserModel ninjaUser)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //POST: n/a
 
-            var dbNinjaUser = new Core.Domain.NinjaUser(ninjaUser);
-
-            _ninjaUserRepository.Add(dbNinjaUser);
-            _unitOfWork.Commit();
-
-            return CreatedAtRoute("DefaultApi", new { id = ninjaUser.NinjaUserId }, ninjaUser);
-        }
 
         //DELETE: api/NinjaUsers/5
+        [Authorize (Roles = "Admin")]
         [ResponseType(typeof(NinjaUserModel))]
         public IHttpActionResult DeleteNinjaUser(int id)
         {
             Core.Domain.NinjaUser ninjaUser = _ninjaUserRepository.GetById(id);
 
-            if (ninjaUser == null)
+            if (ninjaUser == null || ninjaUser.TeamId != CurrentUser.TeamId)
             {
                 return NotFound();
             }

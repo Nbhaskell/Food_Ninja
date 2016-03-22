@@ -53,8 +53,12 @@ namespace FoodNinja.API.OAuth
             });
 
             var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-            identity.AddClaim(new Claim("sub", context.UserName));
-            identity.AddClaim(new Claim("role", "user"));
+            identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
+
+            foreach (var userRole in user.UserRoles)
+            {
+                 identity.AddClaim(new Claim(ClaimTypes.Role, userRole.Role.Name));
+            }
 
             var ticket = new AuthenticationTicket(identity, props);
             context.Validated(ticket);

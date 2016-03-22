@@ -17,11 +17,13 @@ namespace FoodNinja.API.Controllers
     [Authorize]
     public class ParticipationsController : BaseApiController
     {
+        private readonly IOrderRepository _orderRepository;
         private readonly IParticipationRepository _participationRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public ParticipationsController(IParticipationRepository participationRepository, IUnitOfWork unitOfWork, INinjaUserRepository ninjaUserRepository) : base(ninjaUserRepository)
+        public ParticipationsController(IParticipationRepository participationRepository, IUnitOfWork unitOfWork, INinjaUserRepository ninjaUserRepository, IOrderRepository orderRepository) : base(ninjaUserRepository)
         {
+            _orderRepository = orderRepository;
             _participationRepository = participationRepository;
             _unitOfWork = unitOfWork;
         }
@@ -62,7 +64,7 @@ namespace FoodNinja.API.Controllers
 
             var dbParticipation = _participationRepository.GetById(id);
 
-            if (dbParticipation == null) return NotFound();
+            if (dbParticipation == null || dbParticipation.NinjaUserId != CurrentUser.Id) return NotFound();
 
             dbParticipation.Update(participation);
 
@@ -72,6 +74,7 @@ namespace FoodNinja.API.Controllers
             {
                 _unitOfWork.Commit();
             }
+
             catch (Exception)
             {
                 if (!ParticipationExists(id))
@@ -95,6 +98,13 @@ namespace FoodNinja.API.Controllers
             {
                 return BadRequest(ModelState);
             }
+
+            // lets do some security checks!
+            var order = _orderRepository.GetById(participation.OrderId);
+            if (order.TeamId != CurrentUser.TeamId)
+            {
+                return BadRequest();
+            } 
 
             var dbParticipation = new Core.Domain.Participation(participation);
 

@@ -37,7 +37,7 @@ namespace FoodNinja.API.Controllers
         {
             Core.Domain.Order order = _orderRepository.GetById(id);
 
-            if (order == null)
+            if (order == null || order.TeamId != CurrentUser.TeamId)
             {
                 return NotFound();
             }
@@ -46,6 +46,7 @@ namespace FoodNinja.API.Controllers
         }
 
         //PUT: api/Orders
+        [Authorize (Roles = "Admin")]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutOrder(int id, OrderModel order)
         {
@@ -61,7 +62,7 @@ namespace FoodNinja.API.Controllers
 
             var dbOrder = _orderRepository.GetById(id);
 
-            if (dbOrder == null) return NotFound();
+            if (dbOrder == null || dbOrder.TeamId != CurrentUser.TeamId) return NotFound();
 
             dbOrder.Update(order);
 
@@ -87,6 +88,7 @@ namespace FoodNinja.API.Controllers
         }
         
         //POST: api/Orders
+        [Authorize (Roles = "Admin")]
         [ResponseType(typeof(OrderModel))]
         public IHttpActionResult PostOrder(OrderModel order)
         {
@@ -104,12 +106,13 @@ namespace FoodNinja.API.Controllers
         }
 
         //DELETE: api/Orders
+        [Authorize(Roles = "Admin")]
         [ResponseType(typeof(OrderModel))]
         public IHttpActionResult DeleteOrder(int id)
         {
             Core.Domain.Order order = _orderRepository.GetById(id);
 
-            if (order == null)
+            if (order == null || order.TeamId != CurrentUser.TeamId)
             {
                 return NotFound();
             }

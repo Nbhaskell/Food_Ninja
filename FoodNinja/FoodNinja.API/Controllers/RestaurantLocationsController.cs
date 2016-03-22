@@ -26,12 +26,6 @@ namespace FoodNinja.API.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        //GET: api/RestaurantLocations
-        //public IEnumerable<RestaurantLocationModel> GetRestaurantLocations()
-        //{
-        //    return _restaurantLocationRepository.GetAll();
-        //}
-
         [ResponseType(typeof(RestaurantLocationModel))]
         public IEnumerable<RestaurantLocationModel> GetRestaurantLocations()
         {
@@ -53,84 +47,84 @@ namespace FoodNinja.API.Controllers
         }
 
         //PUT: api/RestaurantLocations
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutRestaurantLocation(int id, RestaurantLocationModel restaurantLocation)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //[ResponseType(typeof(void))]
+        //public IHttpActionResult PutRestaurantLocation(int id, RestaurantLocationModel restaurantLocation)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            if (id != restaurantLocation.RestaurantLocationId)
-            {
-                return BadRequest();
-            }
+        //    if (id != restaurantLocation.RestaurantLocationId)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            var dbRestaurantLocation = _restaurantLocationRepository.GetById(id);
+        //    var dbRestaurantLocation = _restaurantLocationRepository.GetById(id);
 
-            if (dbRestaurantLocation == null) return NotFound();
+        //    if (dbRestaurantLocation == null) return NotFound();
 
-            dbRestaurantLocation.Update(restaurantLocation);
+        //    dbRestaurantLocation.Update(restaurantLocation);
 
-            _restaurantLocationRepository.Update(dbRestaurantLocation);
+        //    _restaurantLocationRepository.Update(dbRestaurantLocation);
 
-            try
-            {
-                _unitOfWork.Commit();
-            }
-            catch (Exception)
-            {
-                if (!RestaurantLocationExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        _unitOfWork.Commit();
+        //    }
+        //    catch (Exception)
+        //    {
+        //        if (!RestaurantLocationExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return StatusCode(HttpStatusCode.NoContent);
-        }
+        //    return StatusCode(HttpStatusCode.NoContent);
+        //}
         
         //POST: api/RestaurantLocations
-        [ResponseType(typeof(RestaurantLocationModel))]
-        public IHttpActionResult PostRestaurantLocation(RestaurantLocationModel restaurantLocation)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //[ResponseType(typeof(RestaurantLocationModel))]
+        //public IHttpActionResult PostRestaurantLocation(RestaurantLocationModel restaurantLocation)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            var dbRestaurantLocation = new Core.Domain.RestaurantLocation(restaurantLocation);
+        //    var dbRestaurantLocation = new Core.Domain.RestaurantLocation(restaurantLocation);
 
-            _restaurantLocationRepository.Add(dbRestaurantLocation);
-            _unitOfWork.Commit();
+        //    _restaurantLocationRepository.Add(dbRestaurantLocation);
+        //    _unitOfWork.Commit();
 
-            return CreatedAtRoute("DefaultApi", new { id = restaurantLocation.RestaurantLocationId }, restaurantLocation);
-        }
+        //    return CreatedAtRoute("DefaultApi", new { id = restaurantLocation.RestaurantLocationId }, restaurantLocation);
+        //}
         
         //DELETE: api/RestaurantLocations/5
-        [ResponseType(typeof(RestaurantLocationModel))]
-        public IHttpActionResult DeleteRestaurantLocation(int id)
-        {
-            Core.Domain.RestaurantLocation restaurantLocation = _restaurantLocationRepository.GetById(id);
+        //[ResponseType(typeof(RestaurantLocationModel))]
+        //public IHttpActionResult DeleteRestaurantLocation(int id)
+        //{
+        //    Core.Domain.RestaurantLocation restaurantLocation = _restaurantLocationRepository.GetById(id);
 
-            if (restaurantLocation == null)
-            {
-                return NotFound();
-            }
+        //    if (restaurantLocation == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _restaurantLocationRepository.Delete(restaurantLocation);
+        //    _restaurantLocationRepository.Delete(restaurantLocation);
 
-            _unitOfWork.Commit();
+        //    _unitOfWork.Commit();
 
-            return Ok(Mapper.Map<RestaurantLocationModel>(restaurantLocation));
-        }
+        //    return Ok(Mapper.Map<RestaurantLocationModel>(restaurantLocation));
+        //}
 
-        private bool RestaurantLocationExists(int id)
-        {
-            return _restaurantLocationRepository.Any(rl => rl.RestaurantLocationId == id);
-        }
+        //private bool RestaurantLocationExists(int id)
+        //{
+        //    return _restaurantLocationRepository.Any(rl => rl.RestaurantLocationId == id);
+        //}
     }
 }

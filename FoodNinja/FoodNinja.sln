@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodNinja.Data", "FoodNinja
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodNinja.API", "FoodNinja.API\FoodNinja.API.csproj", "{718F2DD8-2FEB-4ADD-9041-B19C840534E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodNinja.Web", "FoodNinja.Web\FoodNinja.Web.csproj", "{F8729510-D003-41FF-A1D6-FD124FE63B20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{718F2DD8-2FEB-4ADD-9041-B19C840534E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{718F2DD8-2FEB-4ADD-9041-B19C840534E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{718F2DD8-2FEB-4ADD-9041-B19C840534E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8729510-D003-41FF-A1D6-FD124FE63B20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8729510-D003-41FF-A1D6-FD124FE63B20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8729510-D003-41FF-A1D6-FD124FE63B20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8729510-D003-41FF-A1D6-FD124FE63B20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
