@@ -52,3 +52,16 @@ C:\dev\Origin\Food_Ninja\FoodNinja\FoodNinja.API\bin\System.Web.Http.xml
 C:\dev\Origin\Food_Ninja\FoodNinja\FoodNinja.API\bin\System.Web.Http.WebHost.xml
 C:\dev\Origin\Food_Ninja\FoodNinja\FoodNinja.API\obj\Debug\FoodNinja.API.dll
 C:\dev\Origin\Food_Ninja\FoodNinja\FoodNinja.API\obj\Debug\FoodNinja.API.pdb
+C:\dev\Origin\Food_Ninja\FoodNinja\FoodNinja.API\bin\Microsoft.Owin.Cors.dll
+C:\dev\Origin\Food_Ninja\FoodNinja\FoodNinja.API\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\dev\Origin\Food_Ninja\FoodNinja\FoodNinja.API\bin\SimpleInjector.dll
+C:\dev\Origin\Food_Ninja\FoodNinja\FoodNinja.API\bin\SimpleInjector.Extensions.ExecutionContextScoping.dll
+C:\dev\Origin\Food_Ninja\FoodNinja\FoodNinja.API\bin\SimpleInjector.Integration.WebApi.dll
+C:\dev\Origin\Food_Ninja\FoodNinja\FoodNinja.API\bin\System.Web.Cors.dll
+C:\dev\Origin\Food_Ninja\FoodNinja\FoodNinja.API\bin\System.Web.Http.Owin.dll
+C:\dev\Origin\Food_Ninja\FoodNinja\FoodNinja.API\bin\Microsoft.Owin.Cors.xml
+C:\dev\Origin\Food_Ninja\FoodNinja\FoodNinja.API\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\dev\Origin\Food_Ninja\FoodNinja\FoodNinja.API\bin\SimpleInjector.xml
+C:\dev\Origin\Food_Ninja\FoodNinja\FoodNinja.API\bin\SimpleInjector.Extensions.ExecutionContextScoping.xml
+C:\dev\Origin\Food_Ninja\FoodNinja\FoodNinja.API\bin\SimpleInjector.Integration.WebApi.xml
+C:\dev\Origin\Food_Ninja\FoodNinja\FoodNinja.API\bin\System.Web.Http.Owin.xml

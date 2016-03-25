@@ -98,6 +98,7 @@ namespace FoodNinja.API.Controllers
             }
 
             var dbOrder = new Core.Domain.Order(order);
+            dbOrder.Team = CurrentUser.Team;
 
             _orderRepository.Add(dbOrder);
             _unitOfWork.Commit();

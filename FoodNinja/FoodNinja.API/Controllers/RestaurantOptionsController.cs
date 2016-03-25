@@ -18,18 +18,21 @@ namespace FoodNinja.API.Controllers
     public class RestaurantOptionsController : BaseApiController
     {
         private readonly IRestaurantOptionRepository _restaurantOptionRepository;
+        private readonly IOrderRepository _orderRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public RestaurantOptionsController(IRestaurantOptionRepository restaurantOptionRepository, IUnitOfWork unitOfWork, INinjaUserRepository ninjaUserRepository) : base(ninjaUserRepository)
+        public RestaurantOptionsController(IRestaurantOptionRepository restaurantOptionRepository, IUnitOfWork unitOfWork, INinjaUserRepository ninjaUserRepository, IOrderRepository orderRepository) : base(ninjaUserRepository)
         {
             _restaurantOptionRepository = restaurantOptionRepository;
+            _orderRepository = orderRepository;
             _unitOfWork = unitOfWork;
         }
 
-        [ResponseType(typeof(RestaurantOptionModel))]
-        public IEnumerable<RestaurantOptionModel> GetRestaurants()
+        public IEnumerable<RestaurantOptionModel> GetRestaurantOptions(int OrderId)
         {
-            return Mapper.Map<IEnumerable<RestaurantOptionModel>>(_restaurantOptionRepository.GetAll());
+            if (!_orderRepository.Any(o => o.OrderId == OrderId && o.TeamId == CurrentUser.TeamId)) return null;
+
+            return Mapper.Map<IEnumerable<RestaurantOptionModel>>(_restaurantOptionRepository.GetWhere(ro => ro.OrderId == OrderId));
         }
 
         //GET: api/RestaurantOptions/5

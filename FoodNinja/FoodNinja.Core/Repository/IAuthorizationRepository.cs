@@ -12,7 +12,7 @@ namespace FoodNinja.Core.Repository
     public interface IAuthorizationRepository
     {
         Task<NinjaUser> FindUser(string username, string password);
-        Task<IdentityResult> RegisterAdmin(RegistrationModel model);
+        Task<IdentityResult> RegisterAdmin(RegistrationModel.Admin model);
         Task<IdentityResult> RegisterUser(RegistrationModel model);
     }
 }

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AutoMapper;
+using FoodNinja.Core.Domain;
+using FoodNinja.Core.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -23,6 +26,13 @@ namespace FoodNinja.API
             // Set API to return JSON instead of XML
             var appXmlType = config.Formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");
             config.Formatters.XmlFormatter.SupportedMediaTypes.Remove(appXmlType);
+
+            SetupMaps();
+        }
+
+        public static void SetupMaps()
+        {
+            Mapper.CreateMap<Invite, InviteModel>();
         }
     }
 }

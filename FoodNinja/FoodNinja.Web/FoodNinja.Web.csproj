@@ -252,6 +252,7 @@
     <Content Include="css\flexslider.css" />
     <Content Include="css\layout.css" />
     <Content Include="css\prettyPhoto.css" />
+    <Content Include="css\register.css" />
     <Content Include="css\responsivemobilemenu.css" />
     <Content Include="css\skeleton.css" />
     <Content Include="css\style.css" />
@@ -281,7 +282,13 @@
     <Content Include="images\social\twitter.svg" />
     <Content Include="images\top.png" />
     <Content Include="index.html" />
-    <Content Include="js\app\app.js" />
+    <Content Include="js\app\app.ctrl.js" />
+    <Content Include="js\app\dashboard\dashboard.ctrl.js" />
+    <Content Include="js\app\home\register\adminRegister.ctrl.js" />
+    <Content Include="js\app.js" />
+    <Content Include="js\app\home\register\inviteRegister.ctrl.js" />
+    <Content Include="js\app\order\order.ctrl.js" />
+    <Content Include="js\app\team\team.ctrl.js" />
     <Content Include="js\infrastructure\authentication.interceptor.js" />
     <Content Include="js\infrastructure\authentication.service.js" />
     <Content Include="js\jquery-1.8.3.min.js" />
@@ -505,7 +512,8 @@
     <Content Include="templates\app\dashboard\dashboard.html" />
     <Content Include="templates\app\order\order.html" />
     <Content Include="templates\app\team\team.html" />
-    <Content Include="templates\home\register\register.html" />
+    <Content Include="templates\home\register\adminRegister.html" />
+    <Content Include="templates\home\register\inviteRegister.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -515,6 +523,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="js\app\home\login\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>

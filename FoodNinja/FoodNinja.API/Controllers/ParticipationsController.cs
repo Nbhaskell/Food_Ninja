@@ -107,6 +107,7 @@ namespace FoodNinja.API.Controllers
             } 
 
             var dbParticipation = new Core.Domain.Participation(participation);
+            dbParticipation.OrderId = participation.OrderId;
 
             _participationRepository.Add(dbParticipation);
             _unitOfWork.Commit();
@@ -120,7 +121,7 @@ namespace FoodNinja.API.Controllers
         {
             Core.Domain.Participation participation = _participationRepository.GetById(id);
 
-            if (participation == null)
+            if (participation == null || participation?.NinjaUserId != CurrentUser.Id)
             {
                 return NotFound();
             }

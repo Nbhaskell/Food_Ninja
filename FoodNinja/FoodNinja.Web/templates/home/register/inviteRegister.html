@@ -1,0 +1,50 @@
+﻿<div ng-show="tokenValid">
+    <div class="alert alert-success">Your token is valid!</div>
+    </div>
+<meta name="viewport" content="width=device-width">
+<div class="form button group">
+    <button type="button" id="one">Register</button>
+    <button type="button" id="two">Login</button>
+</div>
+<!--registration-->
+<form action="#" method="post" id="registration">
+    <p>
+        <input type="text" name="FirstName" id="FirstName" placeholder="Enter your First Name">
+    </p>
+    <p>
+        <input type="text" name="LastName" id="LastName" placeholder="Enter your Last Name">
+    </p>
+    <p>
+        <input type="text" name="UserName" id="UserName" placeholder="Enter your User Name">
+    </p>
+    <p>
+        <input type="email" name="EmailAddress" id="EmailAddress" placeholder="Enter your E-mail Address">
+    </p>
+    <p>
+        <input type="password" name="password" id="password" placeholder="Enter your Password">
+    </p>
+    <p>
+        <input type="password" name="confirm_password" id="con_password" placeholder="Confirm your Password">
+    </p>
+    <input type="submit" name="submit" id="submit">
+</form>
+<!--login-->
+<form action="#" method="post" id="login">
+    <p>
+        <input type="text" name="username" id="username" placeholder="Enter your User Name">
+    </p>
+    <p>
+        <input type="password" name="password" id="password" placeholder="Enter your Password">
+    </p>
+    <input type="submit" name="log_in" id="log_in" value="Login">
+</form>
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+
+
+
+
+
+
+<div ng-hide="tokenValid">
+    <div class="alert alert-warning">Sorry - your invite to join this team has expired.</div>
+</div>

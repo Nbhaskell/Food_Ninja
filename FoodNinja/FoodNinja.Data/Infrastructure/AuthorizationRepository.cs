@@ -7,10 +7,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using FoodNinja.Core.Repository;
 
 namespace FoodNinja.Data.Infrastructure
 {
-    public class AuthorizationRepository
+    public class AuthorizationRepository : IAuthorizationRepository
     {
         private readonly IUserStore<NinjaUser, int> _userStore;
         private readonly IDatabaseFactory _databaseFactory;
@@ -30,16 +31,13 @@ namespace FoodNinja.Data.Infrastructure
         public async Task<IdentityResult> RegisterUser(RegistrationModel model)
         {
             //create a user
-
+            
             var ninjaUser = new NinjaUser
             {
                 UserName = model.EmailAddress,
                 EmailAddress = model.EmailAddress,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
-                PasswordHash = model.PasswordHash,
-                SecurityStamp = model.SecurityStamp,
-                CreatedDate = model.CreatedDate
             };
 
             //Save the user
@@ -53,21 +51,43 @@ namespace FoodNinja.Data.Infrastructure
 
         // Assign admin role
 
-        public async Task<IdentityResult> RegisterAdmin(RegistrationModel model)
+        public async Task<IdentityResult> RegisterAdmin(RegistrationModel.Admin model)
         {
-            // create a user
-            var ninjaUser = new NinjaUser
-            {
-                UserName = model.EmailAddress,
-                EmailAddress = model.EmailAddress
-            };
 
-            //save the user
-            var result = await _userManager.CreateAsync(ninjaUser, model.Password);
+        //create a team
+        var Team = new Team
+        {
+            TeamName = model.TeamName,
+            Address1 = model.Address1,
+            Address2 = model.Address2,
+            Address3 = model.Address3,
+            City = model.City,
+            State = model.State,
+            PostCode = model.PostCode,
+            Telephone = model.Telephone,
+            CreatedDate = DateTime.Now
+        };      
 
-            await _userManager.AddToRoleAsync(ninjaUser.Id, "Admin");
+        // save new team to db
+        Db.Teams.Add(Team);
+        Db.SaveChanges();
 
-            return result;
+        // create a user
+        var ninjaUser = new NinjaUser
+        {
+            UserName = model.EmailAddress,
+            EmailAddress = model.EmailAddress,
+            FirstName = model.FirstName,
+            LastName = model.LastName,
+            Team = Team
+        };
+
+        //save the user
+        var result = await _userManager.CreateAsync(ninjaUser, model.Password);
+
+        await _userManager.AddToRoleAsync(ninjaUser.Id, "Admin");
+
+        return result;
         }
 
         public async Task<NinjaUser> FindUser(string username, string password)

@@ -40,6 +40,7 @@ namespace FoodNinja.Data.Infrastructure
 
             return Task.Factory.StartNew(() => {
                 //user.NinjaUserId = Guid.NewGuid().ToString();
+                user.CreatedDate = DateTime.Now;
                 Db.NinjaUsers.Add(user);
                 Db.SaveChanges();
             });

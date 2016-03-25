@@ -15,6 +15,9 @@ namespace FoodNinja.Core.Model
         public string LastName { get; set; }
 
         [Required]
+        public string UserName { get; set; }
+
+        [Required]
         public string EmailAddress { get; set; }
 
         [Required]
@@ -28,8 +31,21 @@ namespace FoodNinja.Core.Model
         [Compare("Password", ErrorMessage = "The password and confirm passwords do not match.")]
         public string ConfirmPassword { get; set; }
 
-        public string PasswordHash { get; set; }
-        public string SecurityStamp { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public class Admin : RegistrationModel
+        {
+            [Required]
+            public string TeamName { get; set; }
+            [Required]
+            public string Address1 { get; set; }
+            public string Address2 { get; set; }
+            public string Address3 { get; set; }
+            [Required]
+            public string City { get; set; }
+            [Required]
+            public string State { get; set; }
+            [Required]
+            public string PostCode { get; set; }
+            public string Telephone { get; set; }
+        }
     }
 }

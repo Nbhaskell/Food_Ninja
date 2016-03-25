@@ -40,7 +40,8 @@ namespace FoodNinja.Data.Infrastructure
             modelBuilder.Entity<Team>()
                 .HasMany(g => g.Orders)
                 .WithRequired(o => o.Team)
-                .HasForeignKey(o => o.TeamId); 
+                .HasForeignKey(o => o.TeamId)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<NinjaUser>()
                 .HasMany(n => n.Participations)
@@ -80,6 +81,9 @@ namespace FoodNinja.Data.Infrastructure
                 .HasMany(r => r.UserRoles)
                 .WithRequired(ur => ur.Role)
                 .HasForeignKey(ur => ur.RoleId);
+
+            modelBuilder.Entity<RestaurantOption>()
+                .HasKey(ro => new { ro.OrderId, ro.RestaurantLocationId });
 
             modelBuilder.Entity<UserRole>().HasKey(u => new { u.UserId, u.RoleId });
         }

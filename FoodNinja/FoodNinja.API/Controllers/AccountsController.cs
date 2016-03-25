@@ -47,7 +47,7 @@ namespace FoodNinja.API.Controllers
 
         [AllowAnonymous]
         [Route("api/accounts/register/admin")]
-        public async Task<IHttpActionResult> RegisterAdmin(RegistrationModel registration)
+        public async Task<IHttpActionResult> RegisterAdmin(RegistrationModel.Admin registration)
         {
             if (!ModelState.IsValid)
             {
