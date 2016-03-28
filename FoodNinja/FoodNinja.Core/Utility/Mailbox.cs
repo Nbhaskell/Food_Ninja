@@ -13,7 +13,7 @@ namespace FoodNinja.Core.Utility
         public static void SendEmail(string to, string from, string subject, string message)
         {
             var client = new SmtpClient();
-            client.Credentials = new NetworkCredential("cwsoftwareinc@gmail.com", "@b9kyu04_cw");
+            client.Credentials = new NetworkCredential("foodninjanoreply@gmail.com", "foodninjapassword");
             client.Port = Convert.ToInt32(587);
             client.EnableSsl = true;
             client.Host = "smtp.gmail.com";

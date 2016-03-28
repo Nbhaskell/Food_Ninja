@@ -255,7 +255,10 @@
     <Content Include="css\register.css" />
     <Content Include="css\responsivemobilemenu.css" />
     <Content Include="css\skeleton.css" />
-    <Content Include="css\style.css" />
+    <Content Include="images\foodninjalogo.png" />
+    <Content Include="images\order.png" />
+    <Content Include="images\registericon.png" />
+    <Content Include="images\select.png" />
     <Content Include="images\social\behance.svg" />
     <Content Include="images\social\big\behance.png" />
     <Content Include="images\social\big\dribbble.png" />
@@ -280,6 +283,7 @@
     <Content Include="images\social\small\twitter.png" />
     <Content Include="images\social\small\twitter1.png" />
     <Content Include="images\social\twitter.svg" />
+    <Content Include="images\teamorder.png" />
     <Content Include="images\top.png" />
     <Content Include="index.html" />
     <Content Include="js\app\app.ctrl.js" />
