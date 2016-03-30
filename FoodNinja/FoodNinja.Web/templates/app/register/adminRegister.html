@@ -1,72 +1,70 @@
 ﻿<meta name="viewport" content="width=device-width">
 <div class="form button group">
     <button type="button" id="one">Register</button>
-    <!--<a href="#/adminRegister" class="btn btn-group" id="one">Register</a>-->
+   
     <button type="button" id="two">Login</button>
-    <!--<a href="#/login" class="btn btn-group" id="two">Login</a>-->
+
 </div>
 <!--registration-->
 <form action="#" method="post" id="registration">
     <div>
         <p>
-            <input type="text" name="FirstName" id="FirstName" placeholder="Enter your First Name">
+            <input type="text" name="FirstName" id="FirstName" placeholder="Enter your First Name" ng-model="registration.FirstName">
         </p>
         <p>
-            <input type="text" name="LastName" id="LastName" placeholder="Enter your Last Name">
+            <input type="text" name="LastName" id="LastName" placeholder="Enter your Last Name" ng-model="registration.LastName">
         </p>
         <p>
-            <input type="text" name="UserName" id="UserName" placeholder="Enter your User Name">
+            <input type="text" name="UserName" id="UserName" placeholder="Enter your User Name" ng-model="registration.UserName">
         </p>
         <p>
-            <input type="text" name="TeamName" id="TeamName" placeholder="Team Name">
+            <input type="text" name="TeamName" id="TeamName" placeholder="Team Name" ng-model="registration.TeamName">
         </p>
         <p>
-            <input type="email" name="EmailAddress" id="EmailAddress" placeholder="Enter your E-mail Address">
+            <input type="email" name="EmailAddress" id="EmailAddress" placeholder="Enter your E-mail Address" ng-model="registraton.EmailAddress">
         </p>
         <p>
-            <input type="password" name="password" id="password" placeholder="Enter your Password">
+            <input type="password" name="password" id="password" placeholder="Enter your Password" ng-model="registration.Password">
         </p>
         <p>
-            <input type="password" name="confirm_password" id="con_password" placeholder="Confirm your Password">
+            <input type="password" name="confirm_password" id="con_password" placeholder="Confirm your Password" ng-model="registration.ConfirmPassword">
         </p>
     </div>
-    </form>
-    <form action="#" method="post" id="teamregistration">    
-            <p>
-                <input type="text" name="Address1" id="Address1" placeholder="Address 1">
-            </p>
-            <p>
-                <input type="text" name="Address2" id="Address2" placeholder="Address 2">
-            </p>
-            <p>
-                <input type="text" name="Address2" id="Address3" placeholder="Address 3">
-            </p>
-            <p>
-                <input type="text" name="City" id="City" placeholder="City">
-            </p>
-            <p>
-                <input type="text" name="State" id="State" placeholder="State">
-            </p>
-            <p>
-                <input type="text" name="PostCode" id="PostCode" placeholder="Zip Code">
-            </p>
-            <p>
-                <input type="text" name="Telephone" id="Telephone" placeholder="Phone">
-            </p>
-        <input type="submit" name="submit" id="submit" value="Register">
-    </form>
+</form>
+<form action="#" method="post" id="teamregistration">
+    <p>
+        <input type="text" name="Address1" id="Address1" placeholder="Address 1" ng-model="registration.Address1">
+    </p>
+    <p>
+        <input type="text" name="Address2" id="Address2" placeholder="Address 2" ng-model="registration.Address2">
+    </p>
+    <p>
+        <input type="text" name="Address2" id="Address3" placeholder="Address 3" ng-model="registration.Address3">
+    </p>
+    <p>
+        <input type="text" name="City" id="City" placeholder="City" ng-model="registration.City">
+    </p>
+    <p>
+        <input type="text" name="State" id="State" placeholder="State" ng-model="registration.State">
+    </p>
+    <p>
+        <input type="text" name="PostCode" id="PostCode" placeholder="Zip Code" ng-model="registration.PostCode">
+    </p>
+    <p>
+        <input type="text" name="Telephone" id="Telephone" placeholder="Phone" ng-model="registraion.Telephone">
+    </p>
+    <input type="submit" name="submit" id="submit" ng-click="register()" value="Register">
+</form>
 
 
 <!--login-->
 <form action="#" method="post" id="login">
     <p>
-        <input type="text" name="username" id="username" placeholder="Enter your User Name">
+        <input type="text" name="username" id="username" ng-model="loginData.UserName" placeholder="Enter your User Name">
     </p>
     <p>
-        <input type="password" name="password" id="password" placeholder="Enter your Password">
+        <input type="password" name="password" id="password" ng-model="loginData.Password" placeholder="Enter your Password">
     </p>
-    <input type="submit" name="log_in" id="log_in" value="Login">
+    <input type="submit" name="log_in" id="log_in" ng-click="login()" value="Login">
 </form>
 
-
-<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>

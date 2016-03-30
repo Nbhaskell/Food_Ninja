@@ -4,7 +4,6 @@
     $scope.register = function () {
         AuthenticationService.registerUser($scope.registration).then(
             function (response) {
-                bootbox.alert("Registration Complete");
                 $timeout(function () {
                     location.replace('/#/login');
                 }, 2000);
@@ -15,13 +14,22 @@
         );
     };
 
-    //Problem: don't have any interactivity
-    //Solution: need interactivity
+    $scope.login = function () {
+        AuthenticationService.login($scope.loginData).then(
+            function (response) {
+                location.replace('/#/app/dashboard');
+            },
+            function (err) {
+                bootbox.alert(err.error_description);
+            }
+        );
+    };
+
     $("#registration").hide();
     $('#teamregistration').hide();
     $("#two").css("color", "#FF8C00");
     $("#two").css("border-bottom", "2px solid #fff");
-    //1. when user click on register #registration display block & login hide (default:login)
+
     $("#one").click(function () {
         $("#one").css("color", "#FF8C00");
         $("#one").css("border-bottom", "2px solid #fff");
@@ -31,6 +39,7 @@
         $("#registration").show(1000);
         $('#teamregistration').show(1000);
     });
+
     $("#two").click(function () {
         $("#one").css("color", "#0026ff");
         $("#one").css("border-bottom", "none");
@@ -40,5 +49,4 @@
         $('#teamregistration').hide(1000);
         $("#login").show(1000);
     });
-    //2.Color of open tab will be #ff8C00
 });
