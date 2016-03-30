@@ -1,12 +1,18 @@
-﻿angular.module('app').controller('AdminRegisterController', function ($scope, $stateParams, $http, apiUrl) {
+﻿angular.module('app').controller('AdminRegisterController', function ($scope, $stateParams, $http, apiUrl, AuthenticationService, $state) {
     $scope.registration = {};
 
     $scope.register = function () {
-        AuthenticationService.registerUser($scope.registration).then(
+        AuthenticationService.registerAdmin($scope.registration).then(
             function (response) {
-                $timeout(function () {
-                    location.replace('/#/login');
-                }, 2000);
+                // As soon as we know that the user has successfully registered
+                AuthenticationService.login({ username: $scope.registration.EmailAddress, password: $scope.registration.Password }).then(
+                    function () {
+                        $state.go('app.dashboard');
+                    },
+                    function () {
+                        alert('This should NOT have happened O_O');
+                    }
+                );
             },
             function (error) {
                 bootbox.alert("Failed To Register");
@@ -17,7 +23,7 @@
     $scope.login = function () {
         AuthenticationService.login($scope.loginData).then(
             function (response) {
-                location.replace('/#/app/dashboard');
+                $state.go('app.dashboard');
             },
             function (err) {
                 bootbox.alert(err.error_description);

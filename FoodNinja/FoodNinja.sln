@@ -9,7 +9,25 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodNinja.Data", "FoodNinja
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodNinja.API", "FoodNinja.API\FoodNinja.API.csproj", "{718F2DD8-2FEB-4ADD-9041-B19C840534E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodNinja.Web", "FoodNinja.Web\FoodNinja.Web.csproj", "{F8729510-D003-41FF-A1D6-FD124FE63B20}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FoodNinja.Web", "FoodNinja.Web\", "{DAA2FF4A-EF72-478A-B9D9-DD3EF7420089}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_64325"
+		Debug.AspNetCompiler.PhysicalPath = "FoodNinja.Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64325\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_64325"
+		Release.AspNetCompiler.PhysicalPath = "FoodNinja.Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64325\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "64325"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +47,10 @@ Global
 		{718F2DD8-2FEB-4ADD-9041-B19C840534E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{718F2DD8-2FEB-4ADD-9041-B19C840534E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{718F2DD8-2FEB-4ADD-9041-B19C840534E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F8729510-D003-41FF-A1D6-FD124FE63B20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F8729510-D003-41FF-A1D6-FD124FE63B20}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F8729510-D003-41FF-A1D6-FD124FE63B20}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F8729510-D003-41FF-A1D6-FD124FE63B20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAA2FF4A-EF72-478A-B9D9-DD3EF7420089}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAA2FF4A-EF72-478A-B9D9-DD3EF7420089}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAA2FF4A-EF72-478A-B9D9-DD3EF7420089}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAA2FF4A-EF72-478A-B9D9-DD3EF7420089}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
