@@ -9,22 +9,22 @@
 <form id="registration">
     <div>
         <p>
-            <input type="text" name="FirstName" id="FirstName" placeholder="Enter your First Name" ng-model="registration.FirstName">
+            <input type="text" name="FirstName" id="FirstName" placeholder="First Name" ng-model="registration.FirstName">
         </p>
         <p>
-            <input type="text" name="LastName" id="LastName" placeholder="Enter your Last Name" ng-model="registration.LastName">
+            <input type="text" name="LastName" id="LastName" placeholder="Last Name" ng-model="registration.LastName">
         </p>
         <p>
             <input type="text" name="TeamName" id="TeamName" placeholder="Team Name" ng-model="registration.TeamName">
         </p>
         <p>
-            <input type="email" name="EmailAddress" id="EmailAddress" placeholder="Enter your E-mail Address" ng-model="registration.EmailAddress">
+            <input type="email" name="EmailAddress" id="EmailAddress" placeholder="E-mail Address" ng-model="registration.EmailAddress">
         </p>
         <p>
-            <input type="password" name="password" id="password" placeholder="Enter your Password" ng-model="registration.Password">
+            <input type="password" name="password" id="password" placeholder="Password" ng-model="registration.Password">
         </p>
         <p>
-            <input type="password" name="confirm_password" id="con_password" placeholder="Confirm your Password" ng-model="registration.ConfirmPassword">
+            <input type="password" name="confirm_password" id="con_password" placeholder="Confirm Password" ng-model="registration.ConfirmPassword">
         </p>
     </div>
 </form>
@@ -34,9 +34,6 @@
     </p>
     <p>
         <input type="text" name="Address2" id="Address2" placeholder="Address 2" ng-model="registration.Address2">
-    </p>
-    <p>
-        <input type="text" name="Address2" id="Address3" placeholder="Address 3" ng-model="registration.Address3">
     </p>
     <p>
         <input type="text" name="City" id="City" placeholder="City" ng-model="registration.City">
@@ -57,10 +54,10 @@
 <!--login-->
 <form id="login">
     <p>
-        <input type="text" name="username" id="username" ng-model="loginData.UserName" placeholder="Enter your User Name">
+        <input type="text" name="username" id="username" ng-model="loginData.username" placeholder="Enter your Email Address">
     </p>
     <p>
-        <input type="password" name="password" id="password" ng-model="loginData.Password" placeholder="Enter your Password">
+        <input type="password" name="password" id="password" ng-model="loginData.password" placeholder="Enter your Password">
     </p>
     <input type="submit" name="log_in" id="log_in" ng-click="login()" value="Login">
 </form>

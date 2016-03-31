@@ -1,2 +1,2 @@
-﻿angular.module('app').controller('AdminDashboardController', function ($scope, $stateParams, $http, apiUrl) {
+﻿angular.module('app').controller('AdminDashboardController', function ($scope, $stateParams, $http, apiUrl, $state) {
 });

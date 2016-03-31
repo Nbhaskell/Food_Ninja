@@ -6,35 +6,73 @@ body {
     display: block;
     width: 100%;
     text-align: center;
-    background: url('http://placehold.it/1900x500') no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
+    background: url('../img/office lunch.jpg')no-repeat center center scroll;
     background-size: cover;
-    -o-background-size: cover;
+    /*-webkit-filter: grayscale(35%);*/
+}
+.navbar {
+    height: 75px;
 }
 
+#marketingnav {
+    margin-left: 30%;
+}
+
+    #marketingnav li {
+        font-size: x-large;
+    }
+
 #logo {
-   
+    font-family: Turtles;
+    font-size: 60px;
+    margin-top: 6px;
+}
+
+#marketingnav a {
+    margin-top: 12px;
 }
 
 .headline {
-    padding: 120px 0;
+    padding: 75px 0;
+    height: 730px;
 }
 
-.headline h1 {
-    font-size: 130px;
-    background: #fff;
-    background: rgba(255,255,255,0.9);
+    .headline h1 {
+        color: #333333;
+        font-size: 100px;
+        text-shadow: 4px 4px #fff;
+        font-family: Impact;
+        margin-top: 5px;
+        background:rgba(255,255,255,0.5);
+    }
+
+    .headline h2 {
+        font-size: 50px;
+        text-shadow: 4px 4px #fff;
+        font-family: Impact;
+        color: #333333;
+        background:rgba(255,255,255,0.6);
+    }
+
+#bannertext {
+    margin: 10% auto 0 auto;
 }
 
-.headline h2 {
-    font-size: 77px;
-    background: #fff;
-    background: rgba(255,255,255,0.9);
+.no-padding {
+    padding: 0;
+}
+
+#bannertext h2 {
+    margin-top: 10px;
 }
 
 .featurette-divider {
     margin: 80px 0;
+}
+
+#divider {
+    margin-top: 2%;
+    margin-bottom: 3%;
 }
 
 .featurette {
@@ -43,6 +81,21 @@ body {
 
 .featurette-image.pull-left {
     margin-right: 40px;
+}
+
+#teamimg {
+    height: 350px;
+    width: 400px;
+}
+
+#restaurantimg {
+    height: 350px;
+    width: 400px;
+}
+
+
+#teamimg, #infographic, #restaurantimg {
+    border-radius: 25%;
 }
 
 .featurette-image.pull-right {
@@ -55,6 +108,10 @@ body {
 
 footer {
     margin: 50px 0;
+}
+
+.lead {
+    color: #fff;
 }
 
 @media(max-width:1200px) {
@@ -100,13 +157,13 @@ footer {
         max-width: 50%;
     }
 
-    .featurette-image.pull-left {
-        margin-right: 10px;
-    }
+        .featurette-image.pull-left {
+            margin-right: 10px;
+        }
 
-    .featurette-image.pull-right {
-        margin-left: 10px;
-    }
+        .featurette-image.pull-right {
+            margin-left: 10px;
+        }
 
     .featurette-heading {
         font-size: 30px;
@@ -146,13 +203,13 @@ footer {
         padding: 75px 0 25px 0;
     }
 
-    .headline h1 {
-        font-size: 60px;
-    }
+        .headline h1 {
+            font-size: 60px;
+        }
 
-    .headline h2 {
-        font-size: 30px;
-    }
+        .headline h2 {
+            font-size: 30px;
+        }
 }
 
 @media(max-width:375px) {
@@ -164,13 +221,13 @@ footer {
         max-width: 100%;
     }
 
-    .featurette-image.pull-left {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
+        .featurette-image.pull-left {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
 
-    .featurette-image.pull-right {
-        margin-bottom: 10px;
-        margin-left: 0;
-    }
+        .featurette-image.pull-right {
+            margin-bottom: 10px;
+            margin-left: 0;
+        }
 }

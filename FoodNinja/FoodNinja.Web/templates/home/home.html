@@ -2,30 +2,18 @@
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
+            <a class="navbar-brand" ng-href="#/home" id="logo">Food Ninja</a>
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#" id="logo">Food Ninja</a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+           
+            <div class="collapse navbar-collapse" id="marketingnav">
+                <ul class="nav navbar-nav navbar-right">
+                 
                     <li>
-                        <a href="#about">About</a>
-                    </li>
-                    <li>
-                        <a href="#services">Services</a>
-                    </li>
-                    <li>
-                        <a href="#contact">Contact</a>
-                    </li>
-                    <li>
-                        <a ui-sref="adminRegister">Login</a>
+                        <a ui-sref="adminRegister" class="btn btn-lg btn-default">Login</a>
                     </li>
                 </ul>
             </div>
@@ -37,53 +25,51 @@
     <!-- Full Width Image Header -->
     <header class="header-image">
         <div class="headline">
-            <div class="container">
-                <h1>One Page Wonder</h1>
-                <h2>Will Knock Your Socks Off</h2>
+            <div class="container no-padding" id="bannertext">
+                <h1>Save Time</h1>
+                <h1>Save Hassle</h1>
+                <h2>Group Ordering Made Easy With Food Ninja!</h2>
             </div>
         </div>
     </header>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container no-padding">
 
-        <hr class="featurette-divider">
+        <hr class="featurette-divider" id="divider">
 
-        <!-- First Featurette -->
         <div class="featurette" id="about">
-            <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
+            <img class="featurette-image img-circle img-responsive pull-right" src="../../img/team78.jpg" id="teamimg">
             <h2 class="featurette-heading">
-                This First Heading
-                <span class="text-muted">Will Catch Your Eye</span>
+                <span class="text-muted">Invite Your Team</span>
             </h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <p class="lead">Send a quick email invite to your team members to allow them to join your team and submit their orders to you directly.</p>
         </div>
 
-        <hr class="featurette-divider">
+        <hr class="featurette-divider" id="divider">
 
-        <!-- Second Featurette -->
+        
         <div class="featurette" id="services">
-            <img class="featurette-image img-circle img-responsive pull-left" src="http://placehold.it/500x500">
+            <img class="featurette-image img-circle img-responsive pull-left" src="../../img/restaurant-logos.jpg" id="restaurantimg">
             <h2 class="featurette-heading">
-                The Second Heading
-                <span class="text-muted">Is Pretty Cool Too.</span>
+                <span class="text-muted">Select Your Restaurant</span>
             </h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <p class="lead">Choose from your favorite restaurants where you will be ordering from and send the selection to your team for their input.</p>
         </div>
 
-        <hr class="featurette-divider">
+        <hr class="featurette-divider" id="divider">
 
-        <!-- Third Featurette -->
+     
         <div class="featurette" id="contact">
-            <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
+            <img class="featurette-image img-circle img-responsive pull-right" src="../../img/foodninjainfographic.png" id="infographic">
             <h2 class="featurette-heading">
-                The Third Heading
-                <span class="text-muted">Will Seal the Deal.</span>
+             
+                <span class="text-muted">Get All Orders In One Convenient Place</span>
             </h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <p class="lead">When your team has submitted their order, you will see them all right there on your dashboard to place your order!</p>
         </div>
 
-        <hr class="featurette-divider">
+        <hr class="featurette-divider" id="divider">
 
         <!-- Footer -->
         <footer>

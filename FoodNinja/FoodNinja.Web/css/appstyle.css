@@ -1,0 +1,102 @@
+﻿/*******************************
+            ALL
+*******************************/
+body {
+
+}
+
+
+
+
+
+
+/*******************************
+         DASHBOARD
+*******************************/
+
+#dashboard h2 {
+    color: #fff;
+}
+
+.container th {
+    color: #fff;
+}
+
+#dashteamtable {
+    max-width: 925px;
+    margin-right: 49%;
+    margin-top: 2%;
+}
+
+#dashcurrentorders {
+    float: right;
+    margin-top: -6.3%;
+    max-width: 600px;
+    margin-right: 8%;
+}
+
+#dashpreviousorders {
+        float: right;
+    margin-top: 6.5%;
+    max-width: 600px;
+    margin-right: -31.8%;
+}
+
+#dashcurrentorders #dashteamtable {
+    display: inline-block;  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*******************************
+            TEAM
+*******************************/
+
+#teamtable {
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*******************************
+            ORDERS
+*******************************/
+
+#neworderbutton {
+    background-color: #fff; 
+    border: none;
+    color: #000;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 auto;
+    margin-left: 95em;
+    border-radius: 20px; 
+}
+
+#neworderbutton:hover {
+    background-color: #484848;
+    transition-duration: 0.4s;
+}
