@@ -14,7 +14,7 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $http
 
         .state('app', { url: '/app', templateUrl: '/templates/app/app.html', controller: 'AppController' })
             .state('app.dashboard', { url: '/dashboard', templateUrl: '/templates/app/dashboard/adminDashboard.html', controller: 'AdminDashboardController' })
-            .state('app.userdashboard', { url: '/userdashboard', templateUrl: '/templates/app/dashboard/userdashboard.html', controller: 'UserDashboardController' })
+            .state('app.userdashboard', { url: '/userdashboard', templateUrl: '/templates/app/dashboard/userDashboard.html', controller: 'UserDashboardController' })
             .state('app.createteam', { url: '/createteam', templateUrl: '/templates/app/team/createteam.html', controller: 'CreateTeamController' })
             .state('app.createorder', { url: '/createorder', templateUrl: '/templates/app/order/createorder.html', controller: 'CreateOrderController' })
             .state('app.team', { url: '/team', templateUrl: '/templates/app/team/team.html', controller: 'TeamController' })
