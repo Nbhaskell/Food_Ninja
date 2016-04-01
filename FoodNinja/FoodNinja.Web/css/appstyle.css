@@ -79,6 +79,26 @@ tbody {
     margin: auto;
 }
 
+#inviteTeamMember {
+    background-color: #fff; 
+    border: none;
+    color: #000;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-left: 24em;
+    border-radius: 20px; 
+}
+
+
+
+
+
+
 
 /*******************************
             ORDERS
@@ -95,7 +115,7 @@ tbody {
     font-size: 18px;
     margin: 0 auto;
     margin-top: 1em;
-    margin-left: 30em;
+    margin-left: 24em;
     border-radius: 20px; 
 }
 
@@ -112,6 +132,7 @@ tbody {
 #createOrderDropDown {
     color: #fff;
     position: center;
+    margin-left: 72em;
 }
 
 #createOrder {

@@ -1,8 +1,8 @@
 ﻿<div id="dashboard">
     <div class="container" id="dashteamtable">
-        <h2>Your Team</h2>
+        <div class="title">Your Team</div>
         <table class="table table-bordered">
-            <thead>
+            <thead class="dashhead">
                 <tr>
                     <th>Name</th>
                     <th>Previous Order</th>
@@ -28,7 +28,12 @@
                     <th>Date</th>
                 </tr>
             </thead>
-            <tbody></tbody>
+            <tbody ng-repeat="currentorder in orders">
+                <tr>
+                    <td>{{restaurant.Orders}}</td>
+                    <td>{{}}</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 
@@ -41,7 +46,13 @@
                     <th>Date</th>
                 </tr>
             </thead>
-            <tbody></tbody>
+            <tbody ng-repeat="recentorder in orders">
+                <tr>
+                    <td>{{restaurant.Orders}}</td>
+                    <td>{{}}</td>
+                </tr>
+            </tbody>
         </table>
     </div>
+
 </div>
