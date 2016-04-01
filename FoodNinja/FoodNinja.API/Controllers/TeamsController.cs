@@ -33,7 +33,7 @@ namespace FoodNinja.API.Controllers
             return Ok(Mapper.Map<TeamModel>(CurrentUser.Team));
         }
 
-        //GET: api/Teams/5
+        //GET: api/Teams/Users
         [Route("api/teams/users")]
         public IEnumerable<NinjaUserModel> GetUsersForTeam()
         {

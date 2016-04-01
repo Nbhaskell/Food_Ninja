@@ -1,15 +1,21 @@
-﻿<h1>TEAM</h1>
-
-<div class="container" id="teamtable">
-    <h2>Your Team</h2>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Previous Order</th>
-                <th>Favorite Order</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-</div>
+﻿<div id="team">
+    <div class="container">
+        <div class="title">Your Team</div>
+        <table class="table table-bordered">
+            <thead class="dashhead">
+                <tr>
+                    <th>Name</th>
+                    <th>Previous Order</th>
+                    <th>Favorite Order</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="user in users">
+                <tr>
+                    <td>{{user.FirstName}} {{user.LastName}}</td>
+                    <td>{{}}</td>
+                    <td>{{}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>  
