@@ -1,9 +1,7 @@
 ﻿/*******************************
             ALL
 *******************************/
-body {
 
-}
 
 tbody {
   font-family: "Helvetica Neue", Helvetica, Arial;
@@ -20,21 +18,11 @@ tbody {
 
 
 
-
-
-
-
-
-
-
-
-
-
 /*******************************
          DASHBOARD
 *******************************/
 
-#dashboard h2 {
+#dashboard, #teamtable, #currentordertable, #pastorderstable h2 {
     color: #fff;
 }
 
@@ -60,6 +48,7 @@ tbody {
     max-width: 925px;
     margin-right: 49%;
     margin-top: 2%;
+    margin-left: 3%;
 }
 
 #dashcurrentorders {
@@ -76,20 +65,9 @@ tbody {
     margin-right: 8%;
 }
 
-#dashcurrentorders #dashteamtable {
+#dashcurrentorders, #dashteamtable {
     display: inline-block;  
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*******************************
@@ -100,17 +78,6 @@ tbody {
     position: center;
     margin: auto;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*******************************
