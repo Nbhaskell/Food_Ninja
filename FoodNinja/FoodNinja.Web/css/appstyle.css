@@ -3,6 +3,26 @@
 *******************************/
 
 
+tbody {
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #fff;
+}
+
+#dashnav {
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -20,6 +40,20 @@
     color: #fff;
 }
 
+.title{
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-size: 38px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.dashhead {
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-size: 24px;
+  font-weight: 200;
+  color: #fff;
+}
+
 #dashteamtable {
     max-width: 925px;
     margin-right: 49%;
@@ -35,10 +69,10 @@
 }
 
 #dashpreviousorders {
-        float: right;
+    float: right;
     margin-top: 6.5%;
     max-width: 600px;
-    margin-right: -31.8%;
+    margin-right: 8%;
 }
 
 #dashcurrentorders, #dashteamtable {
@@ -53,7 +87,8 @@
             TEAM
 *******************************/
 
-#teamtable {
+#team {
+    position: center;
     margin: auto;
 }
 
@@ -75,7 +110,8 @@
     display: inline-block;
     font-size: 16px;
     margin: 0 auto;
-    margin-left: 95em;
+    margin-top: 1em;
+    margin-left: 30em;
     border-radius: 20px; 
 }
 

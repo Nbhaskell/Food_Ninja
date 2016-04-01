@@ -33,6 +33,7 @@ namespace FoodNinja.API
         public static void SetupMaps()
         {
             Mapper.CreateMap<Invite, InviteModel>();
+            Mapper.CreateMap<NinjaUser, NinjaUserModel>();
         }
     }
 }

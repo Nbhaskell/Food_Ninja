@@ -1,5 +1,24 @@
-﻿
+    <!--order form-->
+    <form id="newOrder">
+        <div>
+            <p>
+                <input type="text" name="SelectRestaurant" id="SelectRestaurant" placeholder="Select Restaurant" ng-model="registration.FirstName">
+            </p>
+            <p>
+                <input type="text" name="LastName" id="LastName" placeholder="Dear God" ng-model="registration.LastName">
+            </p>
+            <p>
+                <input type="text" name="TeamName" id="TeamName" placeholder="Please Help" ng-model="registration.TeamName">
+            </p>
+            <p>
+                <input type="email" name="EmailAddress" id="EmailAddress" placeholder="Please?" ng-model="registration.EmailAddress">
+            </p>
+        </div>
+    </form>
 
-<a href="#" class="button" id="neworderbutton">
-    <span>Create New Order</span>
-</a>
+
+    <div class="container">
+        <a ui-sref="createOrder" class="btn btn-lg btn-default" id="neworderbutton">Create New Order</a>
+    </div>
+
+</div>  
