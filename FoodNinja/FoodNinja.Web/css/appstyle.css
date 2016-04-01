@@ -117,7 +117,7 @@ tbody {
             ORDERS
 *******************************/
 
-#neworderbutton {
+#createOrderButton {
     background-color: #fff; 
     border: none;
     color: #000;
@@ -125,14 +125,31 @@ tbody {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 18px;
     margin: 0 auto;
     margin-top: 1em;
     margin-left: 30em;
     border-radius: 20px; 
 }
 
-#neworderbutton:hover {
+#createOrderButton:hover {
     background-color: #484848;
     transition-duration: 0.4s;
+}
+
+#RestaurantDropDown {
+    font-size: 26px;
+    color: #000;
+}
+
+#createOrderDropDown {
+    color: #fff;
+    position: center;
+}
+
+#createOrder {
+    position: center;
+}
+#createOrderText {
+
 }
