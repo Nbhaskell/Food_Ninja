@@ -47,13 +47,13 @@ tbody {
 #dashteamtable {
     max-width: 925px;
     margin-right: 49%;
-    margin-top: 2%;
+    margin-top: 2em;
     margin-left: 3%;
 }
 
 #dashcurrentorders {
     float: right;
-    margin-top: -6.3%;
+    margin-top: -12.7em;
     max-width: 600px;
     margin-right: 8%;
 }
